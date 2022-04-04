@@ -20,9 +20,9 @@
       class="flex h-screen bg-gray-50 mt-8 dark:bg-gray-900"
       :class="{ 'overflow-hidden': isSideMenuOpen }"
     >
- 
+
       <div class="flex flex-col flex-1 w-full">
-        
+
         <main class="h-full overflow-y-auto mb-8">
           <div class="container px-6 mx-auto grid">
             <a
@@ -43,9 +43,9 @@
                 </div>
                 <span>Revenir à la page client &RightArrow;</span>
               </a>
-            
-            
-            
+
+
+
 
             <!-- New Table -->
             <div class="w-full overflow-hidden rounded-lg shadow-xs">
@@ -66,27 +66,27 @@
                   <tbody
                     class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
                   >
-                    
+
                     <tr class="text-gray-700 dark:text-gray-400">
                       <td class="px-4 py-3">
-                        <div class="flex items-center text-sm">                          
+                        <div class="flex items-center text-sm">
                           <div>
-                            <p class="">Nourriture</p>
+                            <p class="">{{ $commande->type_prod }}</p>
                           </div>
                         </div>
                       </td>
                       <td class="px-4 py-3">
-                        <div class="flex items-center text-sm">                          
+                        <div class="flex items-center text-sm">
                           <div>
-                            <p class="">10kg</p>
-                            
+                            <p class="">{{ $commande->poids }}</p>
+
                           </div>
                         </div>
                       </td>
                       <td class="px-4 py-3">
-                        <div class="flex items-center text-sm">                          
+                        <div class="flex items-center text-sm">
                           <div>
-                            <p class="">25</p>
+                            <p class="">{{ $commande->nombre_colis }}</p>
                           </div>
                         </div>
                       </td>
@@ -94,20 +94,20 @@
                         Moto
                       </td>
                       <td class="px-4 py-3 text-sm">
-                        
-                          Adjamé
+
+                          {{ $commande->point_retrait }}
                       </td>
-                      
+
                       <td class="px-4 py-3 text-sm">
-                        24/04/2022
+                        {{ $commande->date }}
                       </td>
-                    </tr> 
-                  
+                    </tr>
+
                   </tbody>
                 </table>
               </div>
-              
-              
+
+
           </div>
           <div class="w-full overflow-hidden rounded-lg mt-8 shadow-xs">
             <div class="w-full overflow-x-auto">
@@ -128,47 +128,47 @@
                 <tbody
                   class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
                 >
-                  
+
                   <tr class="text-gray-700 dark:text-gray-400">
                     <td class="px-4 py-3">
-                      <div class="flex items-center text-sm">                          
+                      <div class="flex items-center text-sm">
                         <div>
-                          <p class="">Nourriture</p>
+                          <p class="">{{ $commande->user->nom }}</p>
                         </div>
                       </div>
                     </td>
                     <td class="px-4 py-3">
-                      <div class="flex items-center text-sm">                          
+                      <div class="flex items-center text-sm">
                         <div>
-                          <p class="">10kg</p>
-                          
+                          <p class="">{{ $commande->user->contact }}</p>
+
                         </div>
                       </div>
                     </td>
                     <td class="px-4 py-3">
-                      <div class="flex items-center text-sm">                          
+                      <div class="flex items-center text-sm">
                         <div>
-                          <p class="">25</p>
+                          <p class="">{{ $commande->point_depot }}</p>
                         </div>
                       </div>
                     </td>
                     <td class="px-4 py-3 text-sm">
-                      Moto
+                      {{ $commande->transport }}
                     </td>
-                    
+
                     <td class="px-4 py-3 text-xs">
                       2500Fcfa
                     </td>
                     <td class="px-4 py-3 text-sm">
-                      24/04/2022
+                      {{ $commande->date_depot }}
                     </td>
-                  </tr> 
-                
+                  </tr>
+
                 </tbody>
               </table>
             </div>
-            
-            
+
+
         </div>
 
           <div class="flex-1 h-full max-w-xl mx-auto   ">

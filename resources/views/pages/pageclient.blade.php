@@ -265,7 +265,7 @@
                     @foreach ($commandes as $commande)
                         <tr class="text-gray-700 dark:text-gray-400">
                       <td class="px-4 py-3">
-                        <a class="font-semibold" href="/recap"> {{ $commande->type_prod }}
+                        <a class="font-semibold" href="{{ route('recap.commande', $commande->id) }}"> {{ $commande->type_prod }}
                         <div class="flex items-center text-sm">
                           <div>
 
@@ -313,8 +313,8 @@
                   </tbody>
                 </table>
               </div>
-              
-              
+
+
             </div>
             <div class="flex-1 h-full max-w-xl mx-auto   ">
 

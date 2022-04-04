@@ -59,7 +59,12 @@ class EtatcommandeController extends Controller
             return redirect('/login');
          }
 
+    }
 
-
+    // FONCTION DE RECAP
+    public function recap(Commande $commande)
+    {
+        // dd($commande);
+        return view('pages.recap', compact('commande'));
     }
 }

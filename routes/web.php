@@ -23,6 +23,7 @@ Route::post('/creercompte', [RegisterController::class, 'connecte']);
 // ROUTE POUR PAGE APRES AUTHENTIFICATION
 Route::get('/pageclient', [HomeController::class, 'pageClient'])->name('pageclient')->middleware('auth');
 Route::get('/commande',[EtatcommandeController::class, 'commande'])->middleware('auth');
+Route::get('/recap/{commande}',[EtatcommandeController::class, 'recap'])->name('recap.commande')->middleware('auth');
 Route::post('/commande',[EtatcommandeController::class, 'store'])->middleware('auth');
 Route::get('/profile', [HomeController::class, 'profil'])->name('profile')->middleware('auth');
 Route::get('/adminpage', [HomeController::class, 'admin'])->name('adminpage')->middleware('auth');
@@ -53,11 +54,6 @@ Route::get('/creercomptelivreur', function(){
 
 Route::get('/finalisation', function(){
     return view('pages/finalisation');
-});
-
-
-Route::get('/recap', function(){
-    return view('pages/recap');
 });
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
