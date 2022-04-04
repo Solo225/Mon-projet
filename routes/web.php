@@ -21,11 +21,11 @@ Route::post('/login', [LoginController::class, 'faireConnexion']);
 Route::post('/creercompte', [RegisterController::class, 'connecte']);
 
 // ROUTE POUR PAGE APRES AUTHENTIFICATION
-Route::get('/pageclient', [HomeController::class, 'pageClient'])->name('pageclient');
-Route::get('/commande',[EtatcommandeController::class, 'commande']);
-Route::post('/commande',[EtatcommandeController::class, 'store']);
-Route::get('/profile', [HomeController::class, 'profil'])->name('profile');
-Route::get('/adminpage', [HomeController::class, 'admin'])->name('adminpage');
+Route::get('/pageclient', [HomeController::class, 'pageClient'])->name('pageclient')->middleware('auth');
+Route::get('/commande',[EtatcommandeController::class, 'commande'])->middleware('auth');
+Route::post('/commande',[EtatcommandeController::class, 'store'])->middleware('auth');
+Route::get('/profile', [HomeController::class, 'profil'])->name('profile')->middleware('auth');
+Route::get('/adminpage', [HomeController::class, 'admin'])->name('adminpage')->middleware('auth');
 Route::get('/utilisateur', [HomeController::class, 'utilisa'])->name('utilisateur');
 Route::get('/livreur', [HomeController::class, 'livraison'])->name('livreur');
 

@@ -24,4 +24,9 @@ class Commande extends Model
         'destinataire',
         'user_id',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
