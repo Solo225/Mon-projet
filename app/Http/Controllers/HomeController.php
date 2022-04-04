@@ -15,11 +15,7 @@ class HomeController extends Controller
         $commandes = Commande::get();
         return view('pages.pageclient', compact('commandes'));
     }
-    public function admin()
-    {
-        $commandes = Commande::get();
-        return view('pages.adminpage', compact('commandes'));
-    }
+
     public function utilisa()
     {
         $commandes = Commande::get();
@@ -59,5 +55,5 @@ class HomeController extends Controller
     {
         return view('pages/profile');
     }
-    
+
 }

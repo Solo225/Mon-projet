@@ -38,7 +38,7 @@ class LoginController extends Controller
                     return redirect()->route('pageclient')->with('message', 'connecté!');
                 }
                 if (Auth::user()->type == "admin") {
-                    return redirect()->route('pageclient')->with('message', 'connecté!');
+                    return redirect()->route('adminpage')->with('message', 'connecté!');
                 }
 
         }else{

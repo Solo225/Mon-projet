@@ -238,10 +238,11 @@
                   <p
                     class="text-lg  text-gray-700 dark:text-gray-200"
                   >
-                    {{ $commandes->count() }}
+                    {{ $users->count() }}
                   </p>
                 </a>
                 </div>
+
               </div>
               <!-- Card -->
 
@@ -319,10 +320,10 @@
                   </tbody>
                 </table>
               </div>
-              
-              
+
+
             </div>
-            
+
           </div>
 
         </main>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\EtatcommandeController;
@@ -26,9 +27,11 @@ Route::get('/commande',[EtatcommandeController::class, 'commande'])->middleware(
 Route::get('/recap/{commande}',[EtatcommandeController::class, 'recap'])->name('recap.commande')->middleware('auth');
 Route::post('/commande',[EtatcommandeController::class, 'store'])->middleware('auth');
 Route::get('/profile', [HomeController::class, 'profil'])->name('profile')->middleware('auth');
-Route::get('/adminpage', [HomeController::class, 'admin'])->name('adminpage')->middleware('auth');
 Route::get('/utilisateur', [HomeController::class, 'utilisa'])->name('utilisateur');
 Route::get('/livreur', [HomeController::class, 'livraison'])->name('livreur');
+
+// ROUTE POUR L'ADMINISTRATEUR
+Route::get('/adminpage', [AdminController::class, 'dashboard'])->name('adminpage')->middleware('auth');
 
 
 
