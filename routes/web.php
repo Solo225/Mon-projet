@@ -14,8 +14,8 @@ Route::get('/about', [HomeController::class, 'about']);
 Route::get('/choix', [HomeController::class, 'choix']);
 
 // ROUTE POUR L'AUTHENTIFICATION
-Route::get('/login', [LoginController::class, 'login']);
-Route::get('/creercompte', [RegisterController::class, 'createcompte']);
+Route::get('/login', [LoginController::class, 'login'])->name('login');
+Route::get('/creercompte', [RegisterController::class, 'createcompte'])->name('register');
 Route::get('/logout', [LoginController::class, 'deconnexion']);
 Route::post('/login', [LoginController::class, 'faireConnexion']);
 Route::post('/creercompte', [RegisterController::class, 'connecte']);
