@@ -25,6 +25,7 @@ class Commande extends Model
         'user_id',
     ];
 
+    // AVOIR LES PROPRIOS DES COMMANDE EN COURS
     public function user()
     {
         return $this->belongsTo(User::class);
