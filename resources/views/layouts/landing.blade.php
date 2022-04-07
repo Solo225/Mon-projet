@@ -41,7 +41,8 @@
           <li class="nav-item active">
             <a href="/" class="nav-link">Acceuil</a>
           </li>
-          @if (auth()->user()->type == "livreur")
+         @auth
+           @if (auth()->user()->type == "livreur")
             <li class="nav-item">
                 <a href="/livreur" class="nav-link">Mes commandes</a>
             </li>
@@ -50,6 +51,7 @@
                 <a href="/pageclient" class="nav-link">Mes commandes</a>
             </li>
           @endif
+         @endauth
           <li class="nav-item">
             <a href="/about" class="nav-link">Qui sommes-nous?</a>
           </li>
