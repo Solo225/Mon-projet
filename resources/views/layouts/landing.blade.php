@@ -41,16 +41,22 @@
           <li class="nav-item active">
             <a href="/" class="nav-link">Acceuil</a>
           </li>
-          <li class="nav-item">
-            <a href="/pageclient" class="nav-link">Mes commandes</a>
-          </li>
+          @if (auth()->user()->type == "livreur")
+            <li class="nav-item">
+                <a href="/livreur" class="nav-link">Mes commandes</a>
+            </li>
+          @else
+            <li class="nav-item">
+                <a href="/pageclient" class="nav-link">Mes commandes</a>
+            </li>
+          @endif
           <li class="nav-item">
             <a href="/about" class="nav-link">Qui sommes-nous?</a>
           </li>
           <!-- <li class="nav-item">
             <a href="/blog" class="nav-link">News</a>
           </li> -->
-          
+
         </ul>
     @auth
     <div class="ml-auto">
@@ -59,7 +65,7 @@
         <div class="px-3">
             <a href="/logout" class="btn btn-outline rounded-pill">Se déconnecter</a>
         </div>
-        
+
     @endauth
     @guest
         <div class="ml-auto">
@@ -109,7 +115,7 @@
           </div> -->
           <div class="col-lg-3 py-3">
             <h5>Nous suivre</h5>
-            
+
 
             <div class="sosmed-button mt-4">
               <a href="#"><span class="mai-logo-facebook-f"></span></a>
