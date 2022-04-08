@@ -12,7 +12,7 @@ class HomeController extends Controller
     public function pageClient()
     {
         // RENVOYONS TOUTES LES COMMANDES
-        $commandes = Commande::get();
+        $commandes = Commande::where('user_id', Auth::user()->id)->get();
         return view('pages.pageclient', compact('commandes'));
     }
 
@@ -34,7 +34,7 @@ class HomeController extends Controller
 
     public function about()
     {
-        return view('pages/about');
+        return view('pages.about');
     }
 
     public function contact()
