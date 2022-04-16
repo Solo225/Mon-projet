@@ -266,7 +266,7 @@
                         <span
                           class="px-2 py-1  leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
                         >
-                          Livrée
+                        {{ $commande->statut }} 
                         </span>
                         </a>
                       </td>

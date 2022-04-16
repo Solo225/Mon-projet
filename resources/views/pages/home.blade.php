@@ -79,7 +79,7 @@
           <!-- <div class="img-place mb-3">
             <img src="../assets/landing/img/lieu.png" alt="">
           </div> -->
-          <a href="/commande" class="btn btn-primary">Essayez maintemant!</a>
+          <a href="/commande" class="btn btn-primary">Essayez maintenant!</a>
           <a href="#" class="btn btn-outline border ml-2">Notre Story</a>
         </div>
       </div>
@@ -112,7 +112,7 @@
           <h2 class="title-section">Nous sommes  <span class="marked">prêts </span> à vous servir avec le meilleur</h2>
           <div class="divider"></div>
           <p class="mb-5">Nous fournissons un service de qualité tout en respectant votre vie privée</p>
-          <a href="#" class="btn btn-primary">Essayezz maintenant</a>
+          <a href="/commande" class="btn btn-primary">Essayez maintenant!</a>
           <a href="#" class="btn btn-outline ml-2">Notre story</a>
         </div>
         <div class="col-lg-6 py-3 wow zoomIn">
@@ -459,7 +459,7 @@ o	>10 Kg</strong>
     </div> <!-- .container-fluid -->
   </div> <!-- .page-section -->
 </main>
-
+ 
 
 
 

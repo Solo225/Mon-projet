@@ -143,7 +143,7 @@
                 />
               </label>
               <label class="block mt-4 text-sm">
-                <span class="text-gray-700 dark:text-gray-400">Nom de celui  qui reçoit le colis </span>
+                <span class="text-gray-700 dark:text-gray-400">Numéro de celui  qui reçoit le colis </span>
                 <input name="destinataire"
                   class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                   placeholder="Jane Doe"

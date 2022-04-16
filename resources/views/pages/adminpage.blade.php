@@ -112,28 +112,7 @@
                     class="absolute right-0 w-56 p-2 mt-2 space-y-2 text-gray-600 bg-white border border-gray-100 rounded-md shadow-md dark:border-gray-700 dark:text-gray-300 dark:bg-gray-700"
                     aria-label="submenu"
                   >
-                    <li class="flex">
-                      <a
-                        class="inline-flex items-center w-full px-2 py-1 text-sm  transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
-                        href="/profile"
-                      >
-                        <svg
-                          class="w-4 h-4 mr-3"
-                          aria-hidden="true"
-                          fill="none"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                          ></path>
-                        </svg>
-                        <span>Profile</span>
-                      </a>
-                    </li>
+                    
                     <li class="flex">
                       <a
                         class="inline-flex items-center w-full px-2 py-1 text-sm  transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
@@ -169,7 +148,7 @@
           <div class="container px-6 mx-auto grid">
             <a
                 class="flex items-center justify-between p-4 mb-8 text-sm font-semibold text-white bg-red-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-red"
-                href="/"
+                href="/adminpage"
               >
                 <div class="flex items-center">
                   <svg
@@ -183,7 +162,6 @@
                   </svg>
                    @auth {{ auth()->user()->nom }} @endauth Historique
                 </div>
-                <span>Revenir à l'accueil &RightArrow;</span>
               </a>
 
             <!-- Cards -->
@@ -292,8 +270,7 @@
                         <span
                           class="px-2 py-1  leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
                         >
-                          Livrée
-                        </span>
+                        {{ $commande->statut }}                        </span>
                         </a>
                       </td>
                       <td class="px-4 py-3 text-sm">

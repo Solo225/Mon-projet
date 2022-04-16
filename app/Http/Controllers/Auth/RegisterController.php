@@ -39,7 +39,8 @@ class RegisterController extends Controller
             'prenom' => 'required|max:50|string',
             'email' => 'required|email|unique:users',
             'contact' => 'required|digits:10|unique:users',
-            'password' => 'required|confirmed',
+            'contact' => 'required|digits:10|unique:users',
+            'password' => 'required|min:8|confirmed',
         ], [
             'required.nom' => 'désolé, votre nom ne doit pas depasser 20 caractères',
             'required.prenom' => 'désolé, votre prénom ne doit pas depasser 50 caractères',
@@ -62,7 +63,7 @@ class RegisterController extends Controller
         if (Auth::attempt(['contact' => $request->contact, 'password' => $request->password])) {
 
             // REDIRECTION
-            return redirect('/pageclient');
+            return redirect('/login');
         } else {
             # code...
         }

@@ -283,11 +283,26 @@
                       </td>
                       <td class="px-4 py-3 text-xs">
                       <a class="" href="#">
-                        <span
-                          class="px-2 py-1  leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
-                        >
-                          Livrée
-                        </span>
+                        @if ($commande->statut == "non livré")
+                      <span
+                        class="px-2 py-1  leading-tight text-red-700 bg-red-100 rounded-full dark:bg-green-700 dark:text-green-100"
+                      >
+                      {{ $commande->statut }}   
+                      </span>
+                      @elseif ($commande->statut == "en cours")
+                      <span
+                        class="px-2 py-1  leading-tight text-orange-700 bg-orange-100 rounded-full dark:bg-green-700 dark:text-green-100"
+                      >
+                      {{ $commande->statut }}   
+                      </span>
+                      @else
+                      <span
+                        class="px-2 py-1  leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
+                      >
+                      {{ $commande->statut }}   
+                      </span>
+                      @endif
+                        
                         </a>
                       </td>
                       <td class="px-4 py-3 text-sm">

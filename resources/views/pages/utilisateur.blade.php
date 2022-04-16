@@ -229,7 +229,7 @@
                   </svg>
                 </div>
                 <div>
-                  <a href="/pageutilisateur">
+                  <a href="/utilisateur">
                   <p
                     class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400"
                   >

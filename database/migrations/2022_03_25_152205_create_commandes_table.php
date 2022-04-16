@@ -26,6 +26,7 @@ return new class extends Migration
              $table->string('point_depot');
             $table->string('date_depot');
             $table->string('destinataire');
+            $table->string('statut')->default('non livré');
             $table->unsignedBigInteger('user_id')->index();
             $table->timestamps();
         });
