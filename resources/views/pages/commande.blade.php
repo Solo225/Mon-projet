@@ -53,7 +53,7 @@
                 <span class="text-gray-700 dark:text-gray-400">Type de colis</span>
                 <input name="type_prod"
                   class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                  placeholder="Jane Doe"
+                  placeholder="Jane Doe" required
                 />
               </label>
 
@@ -103,14 +103,14 @@
                 <span class="text-gray-700 dark:text-gray-400">Point de retrait</span>
                 <input name="point_retrait"
                   class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                  placeholder="Jane Doe"
+                  placeholder="Jane Doe" required
                 />
               </label>
               </label>
               <label class="block mt-4 text-sm">
                 <span class="text-gray-700 dark:text-gray-400">Date et Heure</span>
                 <input Type="datetime-local" name="date"
-                  class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                  class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:text-gray-300 dark:focus:shadow-outline-gray form-input" required
                 />
                 </label>
 
@@ -118,35 +118,35 @@
                 <span class="text-gray-700 dark:text-gray-400">Nom de celui avec qui récupérer le colis </span>
                 <input name="recupere"
                   class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                  placeholder="Jane Doe"
+                  placeholder="Jane Doe" required
                 />
               </label>
               <label class="block mt-4 text-sm">
                 <span class="text-gray-700 dark:text-gray-400">Contact de celui avec qui récupérer le colis </span>
                 <input name="contact_recup"
                   class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                  placeholder="Jane Doe"
+                  placeholder="Jane Doe" required
                 />
               </label>
               <label class="block mt-4 text-sm">
                 <span class="text-gray-700 dark:text-gray-400">Point de dépot </span>
                 <input name="point_depot"
                   class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                  placeholder="Jane Doe"
+                  placeholder="Jane Doe" required
                 />
               </label>
               <label class="block mt-4 text-sm">
                 <span class="text-gray-700 dark:text-gray-400">Date et heure de depot  </span>
                 <input type="datetime-local" name="date_depot"
                   class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                  placeholder="Jane Doe"
+                  placeholder="Jane Doe" required
                 />
               </label>
               <label class="block mt-4 text-sm">
-                <span class="text-gray-700 dark:text-gray-400">Numéro de celui  qui reçoit le colis </span>
+                <span class="text-gray-700 dark:text-gray-400">Contact de celui  qui reçoit le colis </span>
                 <input name="destinataire"
                   class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                  placeholder="Jane Doe"
+                  placeholder="Jane Doe" required
                 />
               </label>
               {{-- <label class="block mt-4 text-sm">

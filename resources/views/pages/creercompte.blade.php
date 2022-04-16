@@ -38,14 +38,14 @@
           <div class="flex items-center justify-center p-6 sm:p-12 md:w-1/2">
              <div class="w-full">
                
-            <form method="POST" action="/creercompte">
+            <form method="POST" action="/creercompte" enctype="multipart/form-data">
                 @csrf
                   <h1
                     class="mb-4 text-xl font-semibold text-gray-700 dark:text-gray-200"
                   >
                     Créer un compte
                   </h1>
-                  <label class="block text-sm">
+                  <label class="block mt-4 text-sm">
                     <span class="text-gray-700 dark:text-gray-400">Nom</span>
                     <input name="nom"
                       class="block w-full mt-1 text-smdark:border-gray-600 dark:bg-gray-700 focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:text-gray-300 dark:focus:shadow-outline-gray form-input from-control"
@@ -55,7 +55,7 @@
                   
                       @enderror</span>
                   </label>
-                  <label class="block text-sm">
+                  <label class="block mt-4 text-sm">
                     <span class="text-gray-700 dark:text-gray-400">Prenom(s)</span>
                     <input name="prenom"
                       class="block w-full mt-1 text-smdark:border-gray-600 dark:bg-gray-700 focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:text-gray-300 dark:focus:shadow-outline-gray form-input from-control"
@@ -64,8 +64,8 @@
                     <span class="text-red-700">@error('prenom'){{ 'Non valide' }}
                       @enderror</span>
                   </label>
-                   <label class="block text-sm">
-                    <span class="text-gray-700 dark:text-gray-400">e-mail</span>
+                   <label class="block mt-4 text-sm">
+                    <span class="text-gray-700 dark:text-gray-400">E-mail</span>
                     <input name="email"
                       class="block w-full mt-1 text-smdark:border-gray-600 dark:bg-gray-700 focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:text-gray-300 dark:focus:shadow-outline-gray form-input from-control"
                       placeholder="ronphobos@phobos.ci" value="{{old('email')  }}" required
@@ -75,7 +75,7 @@
                       @enderror</span>
                   </label>
                     <input type="hidden" name="type" value="client">
-                  <label class="block text-sm">
+                  <label class="block mt-4 text-sm">
                     <span class="text-gray-700 dark:text-gray-400">Contact</span>
                     <input name="contact"
                       class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:text-gray-300 dark:focus:shadow-outline-gray form-input from-control"

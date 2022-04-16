@@ -31,8 +31,7 @@ class EtatcommandeController extends Controller
                 'contact_recup' => 'required|digits:10',
                 'point_depot' => 'required',
                 'date_depot' => 'required',
-                'destinataire' =>'required|digits:10',
-                
+                'destinataire' => 'required|digits:10',
             ]);
 
 

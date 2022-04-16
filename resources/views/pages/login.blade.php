@@ -41,7 +41,7 @@
           <div class="flex items-center justify-center p-6 sm:p-12 md:w-1/2">
             <div class="w-full">
                 <form action="/login" method="POST">
-                    @csrf
+                @csrf
 
 
               <h1
@@ -56,7 +56,7 @@
                   placeholder="00 00 00 00 00" value="{{old('contact')  }}" required
                 />
                 <span class="text-red-700">@error('contact'){{ 'Non valide ou existe déjà' }}
-                  
+                   
                   @enderror</span>
               </label>
               <label class="block mt-4 text-sm">

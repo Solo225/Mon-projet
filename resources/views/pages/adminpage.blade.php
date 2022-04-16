@@ -112,7 +112,28 @@
                     class="absolute right-0 w-56 p-2 mt-2 space-y-2 text-gray-600 bg-white border border-gray-100 rounded-md shadow-md dark:border-gray-700 dark:text-gray-300 dark:bg-gray-700"
                     aria-label="submenu"
                   >
-                    
+                    <li class="flex">
+                      <a
+                        class="inline-flex items-center w-full px-2 py-1 text-sm  transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
+                        href="/profileadmin"
+                      >
+                        <svg
+                          class="w-4 h-4 mr-3"
+                          aria-hidden="true"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                          ></path>
+                        </svg>
+                        <span>Profile</span>
+                      </a>
+                    </li>
                     <li class="flex">
                       <a
                         class="inline-flex items-center w-full px-2 py-1 text-sm  transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
@@ -148,7 +169,7 @@
           <div class="container px-6 mx-auto grid">
             <a
                 class="flex items-center justify-between p-4 mb-8 text-sm font-semibold text-white bg-red-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-red"
-                href="/adminpage"
+                href="#"
               >
                 <div class="flex items-center">
                   <svg
@@ -207,7 +228,7 @@
                   </svg>
                 </div>
                 <div>
-                  <a href="/utilisateur">
+                  <a href="#">
                   <p
                     class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400"
                   >
@@ -216,10 +237,39 @@
                   <p
                     class="text-lg  text-gray-700 dark:text-gray-200"
                   >
-                    {{ $commandes->count() }}
+                    {{ $users->count() }}
                   </p>
-                </a>
+                  </a>
                 </div>
+
+              </div>
+              <div
+                class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800"
+              >
+                <div
+                  class="p-3 mr-4 text-orange-500 bg-orange-100 rounded-full dark:text-orange-100 dark:bg-orange-500"
+                >
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                      d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <a href="#">
+                  <p
+                    class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400"
+                  >
+                    Total Livreur
+                  </p>
+                  <p
+                    class="text-lg  text-gray-700 dark:text-gray-200"
+                  >
+                    {{ $users->count() }}
+                  </p>
+                  </a>
+                </div>
+
               </div>
               <!-- Card -->
 
@@ -249,7 +299,7 @@
                     @foreach ($commandes as $commande)
                         <tr class="text-gray-700 dark:text-gray-400">
                       <td class="px-4 py-3">
-                        <a class="font-semibold" href="/recap"> {{ $commande->type_prod }}
+                        <a class="font-semibold" href="{{ route('recap.commande', $commande->id) }}"> {{ $commande->type_prod }}
                         <div class="flex items-center text-sm">
                           <div>
 
@@ -270,13 +320,32 @@
                         <span
                           class="px-2 py-1  leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
                         >
-                        {{ $commande->statut }}                        </span>
+                          Livrée
+                        </span>
                         </a>
                       </td>
                       <td class="px-4 py-3 text-sm">
-                      <a class="" href="#">
+                      <a class="" href="/recap">
                         {{ $commande->created_at }}
                         </a>
+                      </td>
+                      <td class=" text-xs">
+                        <a class="" href="#">
+                          <button
+                              class="block w-80 px-4 py-4   font-medium leading-5 text-center text-green-700 text-md  transition-colors duration-150 bg-green-100 border border-transparent rounded-lg active:bg-green-700 focus:outline-none  focus:shadow-outline-green"
+                            >
+                              Accepter
+                          </button>
+                          </a>
+                      </td>
+                      <td class=" text-xs">
+                        <a class="" href="#">
+                          <button
+                              class="block w-80 px-4 py-4   font-medium leading-5 text-center text-white text-md  transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 focus:outline-none  focus:shadow-outline-red"
+                            >
+                              Refuser
+                          </button>
+                          </a>
                       </td>
                     </tr>
                     @endforeach
@@ -296,10 +365,10 @@
                   </tbody>
                 </table>
               </div>
-              
-              
+
+
             </div>
-            
+
           </div>
 
         </main>
