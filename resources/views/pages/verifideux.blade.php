@@ -46,7 +46,7 @@
               class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800"
             >
             <label class="block text-sm">
-              <span class="font-medium">Rentrez votre photo</span>
+              <span class="font-medium">Rentrez la photo de votre pièce</span>
                 <input type="file" name="photo"
                   class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                   placeholder="Jane Doe" required

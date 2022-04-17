@@ -262,17 +262,50 @@
                         </a>
                       </td>
                       <td class="px-4 py-3 text-xs">
-                      <a class="" href="#">
+                        <a class="" href="/recap">
+                          @if ($commande->statut == "non livré")
+                        <span
+                          class="px-2 py-1  leading-tight text-red-700 bg-red-100 rounded-full dark:bg-green-700 dark:text-green-100"
+                        >
+                        {{ $commande->statut }}   
+                        </span>
+                        @elseif ($commande->statut == "en cours")
+                        <span
+                          class="px-2 py-1  leading-tight text-orange-700 bg-orange-100 rounded-full dark:bg-green-700 dark:text-green-100"
+                        >
+                        {{ $commande->statut }}   
+                        </span>
+                        @else
                         <span
                           class="px-2 py-1  leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
                         >
-                          Livrée
+                        {{ $commande->statut }}   
                         </span>
+                        @endif
+                          
                         </a>
-                      </td>
+                        </td>
                       <td class="px-4 py-3 text-sm">
                       <a class="" href="#">
                         {{ $commande->created_at }}
+                        </a>
+                      </td>
+                      <td class=" text-xs">
+                        <a class="" href="#">
+                          <button
+                              class="block w-80 px-4 py-4   font-medium leading-5 text-center text-green-700 text-md  transition-colors duration-150 bg-green-100 border border-transparent rounded-lg active:bg-green-700 focus:outline-none  focus:shadow-outline-green"
+                            >
+                              Accepter
+                          </button>
+                          </a>
+                      </td>
+                      <td class=" text-xs">
+                        <a class="" href="#">
+                          <button
+                              class="block w-80 px-4 py-4   font-medium leading-5 text-center text-white text-md  transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 focus:outline-none  focus:shadow-outline-red"
+                            >
+                              Refuser
+                          </button>
                         </a>
                       </td>
                     </tr>

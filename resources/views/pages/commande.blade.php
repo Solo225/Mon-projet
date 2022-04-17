@@ -51,10 +51,13 @@
             >
               <label class="block text-sm">
                 <span class="text-gray-700 dark:text-gray-400">Type de colis</span>
-                <input name="type_prod"
-                  class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                  placeholder="Jane Doe" required
-                />
+                <select name="poids"
+                  class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:focus:shadow-outline-gray"
+                >
+                  <option value="fragile">Fragile</option>
+                  <option value="3 kg">Solide</option>
+                  
+                </select>
               </label>
 
 

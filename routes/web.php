@@ -31,7 +31,11 @@ Route::get('/utilisateur', [HomeController::class, 'utilisa'])->name('utilisateu
 Route::get('/livreur', [HomeController::class, 'livraison'])->name('livreur');
 Route::get('/profileadmin', [HomeController::class, 'profileadmini'])->name('profileadmin');
 Route::get('/profilelivreur', [HomeController::class, 'profilelivrer'])->name('profilelivreur');
-Route::get('/verifiun', [HomeController::class, 'verifia'])->name('verifiun');
+Route::get('/verifiun', [HomeController::class, 'verifia'])->name('verifiun')->middleware('auth');
+Route::get('/verifideux', [HomeController::class, 'verifi'])->name('verifideux')->middleware('auth');
+Route::get('/verifitrois', [HomeController::class, 'verif'])->name('verifitrois')->middleware('auth');
+Route::get('/confirlivreur', [HomeController::class, 'confir'])->name('confirlivreur')->middleware('auth');
+Route::get('/suppriLivreur', [HomeController::class, 'suppr'])->name('suppriLivreur')->middleware('auth');
 
 // ROUTE POUR L'ADMINISTRATEUR
 Route::get('/adminpage', [AdminController::class, 'dashboard'])->name('adminpage')->middleware('auth');

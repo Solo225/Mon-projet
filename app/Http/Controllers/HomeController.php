@@ -71,5 +71,20 @@ class HomeController extends Controller
     {
         return view('pages/verifiun');
     }
-
+    public function verifi()
+    {
+        return view('pages/verifideux');
+    }
+    public function verif()
+    {
+        return view('pages/verifitrois');
+    }
+    public function confir()
+    {
+        return view('pages/confirlivreur');
+    }
+    public function suppr()
+    {
+        return view('pages/suppriLivreur');
+    }
 }
