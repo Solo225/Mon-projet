@@ -282,6 +282,24 @@
                         </a>
                       </td>
                       <td class="px-4 py-3 text-xs">
+                      {{-- A DECOMMENTER SI TU FINIS POUR LE STATUT --}}
+                      {{-- @if ($commande->statut == "livree")
+                            <a class="" href="#">
+                                <span
+                                class="px-2 py-1  leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
+                                >
+                                Livrée
+                                </span>
+                                </a>
+                      @else
+                            <a class="" href="#">
+                        <span
+                          class="px-2 py-1  leading-tight text-red-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
+                        >
+                          Non Livrée
+                        </span>
+                        </a>
+                      @endif --}}
                       <a class="" href="#">
                         <span
                           class="px-2 py-1  leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
