@@ -28,10 +28,10 @@ class EtatcommandeController extends Controller
                 'point_retrait' => 'required',
                 'date' => 'required',
                 'recupere' => 'required',
-                'contact_recup' => 'required',
+                'contact_recup' => 'required|digits:10',
                 'point_depot' => 'required',
                 'date_depot' => 'required',
-                'destinataire' => 'required',
+                'destinataire' => 'required|digits:10',
             ]);
 
 

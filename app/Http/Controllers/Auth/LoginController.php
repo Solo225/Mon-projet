@@ -22,7 +22,7 @@ class LoginController extends Controller
         // VALIDER LES DONNEES DE LA BASE DONNEE
         $valide =  $this->validate($request, [
             'contact' => 'required|digits:10',
-            'password' => 'required',
+            'password' => 'required|min:8',
         ], [
             'required.contact' => 'désolé, votre nom ne doit pas depasser 20 caractère',
             'required.confirmed' => 'désolé, vos mots de passe ne correspondent pas!',

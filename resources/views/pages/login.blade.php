@@ -41,7 +41,7 @@
           <div class="flex items-center justify-center p-6 sm:p-12 md:w-1/2">
             <div class="w-full">
                 <form action="/login" method="POST">
-                    @csrf
+                @csrf
 
 
               <h1
@@ -49,20 +49,26 @@
               >
                 Se connecter
               </h1>
-              <label class="block text-sm">
-                <span class="text-gray-700 dark:text-gray-400">Téléphone</span>
+              <label class="block mt-4 text-sm">
+                <span class="text-gray-700 dark:text-gray-400">Contact</span>
                 <input name="contact"
                   class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                  placeholder="00 00 00 00 00"
+                  placeholder="00 00 00 00 00" value="{{old('contact')  }}" required
                 />
+                <span class="text-red-700">@error('contact'){{ 'Non valide ou existe déjà' }}
+                   
+                  @enderror</span>
               </label>
               <label class="block mt-4 text-sm">
                 <span class="text-gray-700 dark:text-gray-400">Mot de passe</span>
                 <input name="password"
                   class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                   placeholder="***************"
-                  type="password"
+                  type="password" value="{{old('password')  }}" required
                 />
+                <span class="text-red-700">@error('password'){{ 'Non valide' }}
+                  
+                  @enderror</span>
               </label>
 
               <!-- You should use a button here, as the anchor is only used for the example  -->

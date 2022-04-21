@@ -27,7 +27,7 @@
           <div class="container px-6 mx-auto grid">
             <a
                 class="flex items-center justify-between p-4 mb-8 text-sm font-semibold text-white bg-red-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-red"
-                href="/pageclient"
+                href="#"
               >
                 <div class="flex items-center">
                   <svg
@@ -41,7 +41,6 @@
                   </svg>
                   <h1>Recaptulatif de la commande</h1>
                 </div>
-                <span>Revenir à la page client &RightArrow;</span>
               </a>
 
 
@@ -91,7 +90,7 @@
                         </div>
                       </td>
                       <td class="px-4 py-3 text-sm">
-                        Moto
+                        {{ $commande->transport }}
                       </td>
                       <td class="px-4 py-3 text-sm">
 
@@ -119,9 +118,10 @@
                     <th class="px-4 py-3">Nom du détenteur</th>
                     <th class="px-4 py-3">Contact du détenteur </th>
                     <th class="px-4 py-3">Point de dépot</th>
-                    <th class="px-4 py-3">Contact</th>
+                    <th class="px-4 py-3">Contact du récupérateur</th>
                     <th class="px-4 py-3">Prix</th>
                     <th class="px-4 py-3">Date et heure de depot</th>
+                    <th class="px-4 py-3">Contact du livreur</th>
 
                   </tr>
                 </thead>
@@ -133,14 +133,14 @@
                     <td class="px-4 py-3">
                       <div class="flex items-center text-sm">
                         <div>
-                          <p class="">{{ $commande->user->nom }}</p>
+                          <p class="">{{ $commande->recupere }}</p>
                         </div>
                       </div>
                     </td>
                     <td class="px-4 py-3">
                       <div class="flex items-center text-sm">
                         <div>
-                          <p class="">{{ $commande->user->contact }}</p>
+                          <p class="">{{ $commande->contact_recup }}</p>
 
                         </div>
                       </div>
@@ -153,11 +153,14 @@
                       </div>
                     </td>
                     <td class="px-4 py-3 text-sm">
-                      {{ $commande->transport }}
+                      {{ $commande->destinataire }}
                     </td>
 
                     <td class="px-4 py-3 text-xs">
                       2500Fcfa
+                    </td>
+                    <td class="px-4 py-3 text-sm">
+                      {{ $commande->date_depot }}
                     </td>
                     <td class="px-4 py-3 text-sm">
                       {{ $commande->date_depot }}

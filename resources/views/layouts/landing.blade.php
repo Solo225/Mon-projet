@@ -62,7 +62,14 @@
         </ul>
     @auth
     <div class="ml-auto">
-      <a href="/profile" class="btn btn-outline rounded-pill">Mon compte</a>
+      @auth
+        @if (auth()->user()->type == "livreur")
+        <a href="/profilelivreur" class="btn btn-outline rounded-pill">Mon compte</a>
+        @else
+        <a href="/profile" class="btn btn-outline rounded-pill">Mon compte</a>
+        @endif
+      @endauth
+      
   </div>
         <div class="px-3">
             <a href="/logout" class="btn btn-outline rounded-pill">Se déconnecter</a>

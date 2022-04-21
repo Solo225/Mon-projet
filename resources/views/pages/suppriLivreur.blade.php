@@ -21,7 +21,8 @@
       :class="{ 'overflow-hidden': isSideMenuOpen }"
     >
 
-      <div class="flex flex-col flex-1 w-full">
+      <div class="flex flex-col flex-
+      1 w-full">
         <header class="z-10 py-4 mb-6 bg-white shadow-md dark:bg-gray-800">
           <div
             class="container flex items-center justify-between h-full px-6 mx-auto text-red-600 dark:text-red-300"
@@ -36,6 +37,7 @@
                 class="w-6 h-6"
                 aria-hidden="true"
                 fill="currentColor"
+                
                 viewBox="0 0 20 20"
               >
                 <path
@@ -115,7 +117,7 @@
                     <li class="flex">
                       <a
                         class="inline-flex items-center w-full px-2 py-1 text-sm  transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
-                        href="/profilelivreur"
+                        href="/profileadmin"
                       >
                         <svg
                           class="w-4 h-4 mr-3"
@@ -169,7 +171,7 @@
           <div class="container px-6 mx-auto grid">
             <a
                 class="flex items-center justify-between p-4 mb-8 text-sm font-semibold text-white bg-red-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-red"
-                href="/"
+                href="#"
               >
                 <div class="flex items-center">
                   <svg
@@ -183,12 +185,13 @@
                   </svg>
                    @auth {{ auth()->user()->nom }} @endauth Historique
                 </div>
-                <span>Revenir à l'accueil &RightArrow;</span>
               </a>
 
             <!-- Cards -->
             <div class="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">
               <!-- Card -->
+              
+              
               <div
                 class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800"
               >
@@ -202,21 +205,21 @@
                   </svg>
                 </div>
                 <div>
-                  <a href="/adminpage">
+                  <a href="/confirlivreur">
                   <p
                     class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400"
                   >
-                    Total commandes
+                    Total Livreur
                   </p>
                   <p
                     class="text-lg  text-gray-700 dark:text-gray-200"
                   >
-                    {{ $commandes->count() }}
+                    {{ $users->count() }}
                   </p>
-                </a>
+                  </a>
                 </div>
+
               </div>
-              
               <!-- Card -->
 
 
@@ -245,7 +248,7 @@
                     @foreach ($commandes as $commande)
                         <tr class="text-gray-700 dark:text-gray-400">
                       <td class="px-4 py-3">
-                        <a class="font-semibold" href="/recap"> {{ $commande->type_prod }}
+                        <a class="font-semibold" href="{{ route('recap.commande', $commande->id) }}"> {{ $commande->type_prod }}
                         <div class="flex items-center text-sm">
                           <div>
 
@@ -262,31 +265,16 @@
                         </a>
                       </td>
                       <td class="px-4 py-3 text-xs">
-                        <a class="" href="/recap">
-                          @if ($commande->statut == "non livré")
-                        <span
-                          class="px-2 py-1  leading-tight text-red-700 bg-red-100 rounded-full dark:bg-green-700 dark:text-green-100"
-                        >
-                        {{ $commande->statut }}   
-                        </span>
-                        @elseif ($commande->statut == "en cours")
-                        <span
-                          class="px-2 py-1  leading-tight text-orange-700 bg-orange-100 rounded-full dark:bg-green-700 dark:text-green-100"
-                        >
-                        {{ $commande->statut }}   
-                        </span>
-                        @else
+                      <a class="" href="#">
                         <span
                           class="px-2 py-1  leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
                         >
-                        {{ $commande->statut }}   
+                          Livrée
                         </span>
-                        @endif
-                          
                         </a>
-                        </td>
+                      </td>
                       <td class="px-4 py-3 text-sm">
-                      <a class="" href="#">
+                      <a class="" href="/recap">
                         {{ $commande->created_at }}
                         </a>
                       </td>
@@ -304,32 +292,32 @@
                           <button
                               class="block w-80 px-4 py-4   font-medium leading-5 text-center text-white text-md  transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 focus:outline-none  focus:shadow-outline-red"
                             >
-                              Refuser
+                              Supprimer
                           </button>
-                        </a>
+                          </a>
                       </td>
                     </tr>
                     @endforeach
                   @else
                     <tr>
-                        <td colspan="4" style="text-align: center; color:red">Pas de commande encours</td>
+                        <td colspan="4" style="text-align: center; color:red">Pas de Livreur</td>
                     </tr>
                   @endif
                   @endauth
 
                   @guest
                       <tr>
-                        <td colspan="4" style="text-align: center; color:red">Ah ah ah ah, connecte toi pour voir les commandes</td>
+                        <td colspan="4" style="text-align: center; color:red">Ah ah ah ah, connecte toi pour voir les Livreurs</td>
                     </tr>
                   @endguest
 
                   </tbody>
                 </table>
               </div>
-              
-              
+
+
             </div>
-            
+
           </div>
 
         </main>

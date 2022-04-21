@@ -282,39 +282,20 @@
                         </a>
                       </td>
                       <td class="px-4 py-3 text-xs">
-                      {{-- A DECOMMENTER SI TU FINIS POUR LE STATUT --}}
-                      {{-- @if ($commande->statut == "livree")
-                            <a class="" href="#">
-                                <span
-                                class="px-2 py-1  leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
-                                >
-                                Livrée
-                                </span>
-                                </a>
-                      @else
-                            <a class="" href="#">
-                        <span
-                          class="px-2 py-1  leading-tight text-red-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
-                        >
-                          Non Livrée
-                        </span>
-                        </a>
-                      @endif --}}
                       <a class="" href="#">
                         <span
                           class="px-2 py-1  leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
                         >
                           Livrée
                         </span>
-                        </a>
-                      </td>
-                      <td class="px-4 py-3 text-sm">
-                      <a class="" href="#">
-                        {{ $commande->created_at }}
-                        </a>
-                      </td>
-                    </tr>
-                    @endforeach
+green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
+                      >
+                      {{ $commande->statut }}
+                      </span>
+                      @endif
+
+>>>>>>> 27f8497419b5a20ad58a6078959d68c660528510
+ @endforeach
                   @else
                     <tr>
                         <td colspan="4" style="text-align: center; color:red">Pas de commande encours</td>

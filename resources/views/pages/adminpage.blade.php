@@ -21,7 +21,8 @@
       :class="{ 'overflow-hidden': isSideMenuOpen }"
     >
 
-      <div class="flex flex-col flex-1 w-full">
+      <div class="flex flex-col flex-
+      1 w-full">
         <header class="z-10 py-4 mb-6 bg-white shadow-md dark:bg-gray-800">
           <div
             class="container flex items-center justify-between h-full px-6 mx-auto text-red-600 dark:text-red-300"
@@ -36,6 +37,7 @@
                 class="w-6 h-6"
                 aria-hidden="true"
                 fill="currentColor"
+
                 viewBox="0 0 20 20"
               >
                 <path
@@ -115,7 +117,7 @@
                     <li class="flex">
                       <a
                         class="inline-flex items-center w-full px-2 py-1 text-sm  transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
-                        href="/profile"
+                        href="/profileadmin"
                       >
                         <svg
                           class="w-4 h-4 mr-3"
@@ -169,7 +171,7 @@
           <div class="container px-6 mx-auto grid">
             <a
                 class="flex items-center justify-between p-4 mb-8 text-sm font-semibold text-white bg-red-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-red"
-                href="/"
+                href="#"
               >
                 <div class="flex items-center">
                   <svg
@@ -183,7 +185,6 @@
                   </svg>
                    @auth {{ auth()->user()->nom }} @endauth Historique
                 </div>
-                <span>Revenir à l'accueil &RightArrow;</span>
               </a>
 
             <!-- Cards -->
@@ -229,7 +230,7 @@
                   </svg>
                 </div>
                 <div>
-                  <a href="/utilisateur">
+                  <a href="#">
                   <p
                     class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400"
                   >
@@ -240,7 +241,35 @@
                   >
                     {{ $users->count() }}
                   </p>
-                </a>
+                  </a>
+                </div>
+
+              </div>
+              <div
+                class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800"
+              >
+                <div
+                  class="p-3 mr-4 text-orange-500 bg-orange-100 rounded-full dark:text-orange-100 dark:bg-orange-500"
+                >
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                      d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <a href="/confirlivreur">
+                  <p
+                    class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400"
+                  >
+                    Total Livreur
+                  </p>
+                  <p
+                    class="text-lg  text-gray-700 dark:text-gray-200"
+                  >
+                    {{ $users->count() }}
+                  </p>
+                  </a>
                 </div>
 
               </div>
@@ -272,7 +301,7 @@
                     @foreach ($commandes as $commande)
                         <tr class="text-gray-700 dark:text-gray-400">
                       <td class="px-4 py-3">
-                        <a class="font-semibold" href="/recap"> {{ $commande->type_prod }}
+                        <a class="font-semibold" href="{{ route('recap.commande', $commande->id) }}"> {{ $commande->type_prod }}
                         <div class="flex items-center text-sm">
                           <div>
 
@@ -298,9 +327,27 @@
                         </a>
                       </td>
                       <td class="px-4 py-3 text-sm">
-                      <a class="" href="#">
+                      <a class="" href="/recap">
                         {{ $commande->created_at }}
                         </a>
+                      </td>
+                      <td class=" text-xs">
+                        <a class="" href="#">
+                          <button
+                              class="block w-80 px-4 py-4   font-medium leading-5 text-center text-green-700 text-md  transition-colors duration-150 bg-green-100 border border-transparent rounded-lg active:bg-green-700 focus:outline-none  focus:shadow-outline-green"
+                            >
+                              Accepter
+                          </button>
+                          </a>
+                      </td>
+                      <td class=" text-xs">
+                        <a class="" href="#">
+                          <button
+                              class="block w-80 px-4 py-4   font-medium leading-5 text-center text-white text-md  transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 focus:outline-none  focus:shadow-outline-red"
+                            >
+                              Refuser
+                          </button>
+                          </a>
                       </td>
                     </tr>
                     @endforeach

@@ -22,7 +22,7 @@
     >
 
       <div class="flex flex-col flex-1 w-full">
-        <header class="z-10 py-4 mb-6 bg-white shadow-md dark:bg-gray-800">
+        <header class="z-10 py-4 bg-white shadow-md dark:bg-gray-800">
           <div
             class="container flex items-center justify-between h-full px-6 mx-auto text-red-600 dark:text-red-300"
           >
@@ -115,7 +115,7 @@
                     <li class="flex">
                       <a
                         class="inline-flex items-center w-full px-2 py-1 text-sm  transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
-                        href="/profilelivreur"
+                        href="/profileadmin "
                       >
                         <svg
                           class="w-4 h-4 mr-3"
@@ -137,6 +137,29 @@
                     <li class="flex">
                       <a
                         class="inline-flex items-center w-full px-2 py-1 text-sm  transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
+                        href="#"
+                      >
+                        <svg
+                          class="w-4 h-4 mr-3"
+                          aria-hidden="true"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+                          ></path>
+                          <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        <span>Mot de passe</span>
+                      </a>
+                    </li>
+                    <li class="flex">
+                      <a
+                        class="inline-flex items-center w-full px-2 py-1 text-sm  transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
                         href="/logout"
                       >
                         <svg
@@ -153,10 +176,7 @@
                             d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
                           ></path>
                         </svg>
-                        @auth
-                            <span>Déconnexion</span>
-                        @endauth
-
+                        <span>Déconnexion</span>
                       </a>
                     </li>
                   </ul>
@@ -165,11 +185,17 @@
             </ul>
           </div>
         </header>
-        <main class="h-full overflow-y-auto mb-8">
-          <div class="container px-6 mx-auto grid">
-            <a
+        <main class="h-full pb-16 overflow-y-auto">
+            <div class="container grid px-6 mx-auto">
+              <h2
+                class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200"
+              >
+                Vos informations personnelles
+              </h2>
+              <!-- CTA -->
+              <a
                 class="flex items-center justify-between p-4 mb-8 text-sm font-semibold text-white bg-red-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-red"
-                href="/"
+                href="/adminpage"
               >
                 <div class="flex items-center">
                   <svg
@@ -181,158 +207,75 @@
                       d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                     ></path>
                   </svg>
-                   @auth {{ auth()->user()->nom }} @endauth Historique
                 </div>
-                <span>Revenir à l'accueil &RightArrow;</span>
+                <span>Revenir sur la page admin &RightArrow;</span>
               </a>
-
-            <!-- Cards -->
-            <div class="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">
-              <!-- Card -->
-              <div
-                class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800"
-              >
-                <div
-                  class="p-3 mr-4 text-orange-500 bg-orange-100 rounded-full dark:text-orange-100 dark:bg-orange-500"
-                >
-                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                    <path
-                      d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"
-                    ></path>
-                  </svg>
-                </div>
-                <div>
-                  <a href="/adminpage">
-                  <p
-                    class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400"
-                  >
-                    Total commandes
-                  </p>
-                  <p
-                    class="text-lg  text-gray-700 dark:text-gray-200"
-                  >
-                    {{ $commandes->count() }}
-                  </p>
-                </a>
-                </div>
-              </div>
+  
+              <!-- Wit h avatar -->
               
-              <!-- Card -->
-
-
-
-            </div>
-
-            <!-- New Table -->
-            <div class="w-full overflow-hidden rounded-lg shadow-xs">
-              <div class="w-full overflow-x-auto">
-                <table class="w-full whitespace-no-wrap">
-                  <thead>
-                    <tr
-                      class="text-xs  tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
+              <div class="w-full mb-8 overflow-hidden rounded-lg shadow-xs">
+                <div class="w-full overflow-x-auto">
+                  <table class="w-full whitespace-no-wrap">
+                    <thead>
+                      <tr
+                        class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
+                      >
+                        <th class="px-4 py-3">Nom</th>
+                        <th class="px-4 py-3">Prenom</th>
+                        <th class="px-4 py-3">Contact</th>
+                        <th class="px-4 py-3">Email</th>
+                      </tr>
+                    </thead>
+                    <tbody
+                      class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
                     >
-                      <th class="px-4 py-3">Commandes</th>
-                      <th class="px-4 py-3">Prix</th>
-                      <th class="px-4 py-3">Statuts</th>
-                      <th class="px-4 py-3">Dates</th>
-                    </tr>
-                  </thead>
-                  <tbody
-                    class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
-                  >
-                  @auth
-                    @if ($commandes->count())
-                    @foreach ($commandes as $commande)
-                        <tr class="text-gray-700 dark:text-gray-400">
-                      <td class="px-4 py-3">
-                        <a class="font-semibold" href="/recap"> {{ $commande->type_prod }}
-                        <div class="flex items-center text-sm">
-                          <div>
-
-                            <p class="text-xs text-gray-600 dark:text-gray-400">
-                              {{ $commande->transport }}
-                            </p>
+                      
+  
+                      
+  
+                      
+  
+                      <tr class="text-gray-700 dark:text-gray-400">
+                        <td class="px-4 py-3">
+                          <div class="flex items-center text-sm">
+                            <!-- Avatar with inset shadow -->
+                            <div
+                              class="relative hidden w-8 h-8 mr-3 rounded-full md:block"
+                            >
+                              <img
+                                class="object-cover w-full h-full rounded-full"
+                                src="https://images.unsplash.com/photo-1551006917-3b4c078c47c9?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
+                                alt=""
+                                loading="lazy"
+                              />
+                              <div
+                                class="absolute inset-0 rounded-full shadow-inner"
+                                aria-hidden="true"
+                              ></div>
+                            </div>
+                            <div>
+                              <p class="font-semibold">@auth {{ auth()->user()->nom }} @endauth</p>
+                              <p class="text-xs text-gray-600 dark:text-gray-400">
+                                @auth {{ auth()->user()->type }} @endauth
+                              </p>
+                            </div>
                           </div>
-                        </div>
-                        </a>
-                      </td>
-                      <td class="px-4 py-3 text-sm">
-                      <a class="" href="#">
-                        {{ $commande->nombre_colis }} Fcfa
-                        </a>
-                      </td>
-                      <td class="px-4 py-3 text-xs">
-                        <a class="" href="/recap">
-                          @if ($commande->statut == "non livré")
-                        <span
-                          class="px-2 py-1  leading-tight text-red-700 bg-red-100 rounded-full dark:bg-green-700 dark:text-green-100"
-                        >
-                        {{ $commande->statut }}   
-                        </span>
-                        @elseif ($commande->statut == "en cours")
-                        <span
-                          class="px-2 py-1  leading-tight text-orange-700 bg-orange-100 rounded-full dark:bg-green-700 dark:text-green-100"
-                        >
-                        {{ $commande->statut }}   
-                        </span>
-                        @else
-                        <span
-                          class="px-2 py-1  leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
-                        >
-                        {{ $commande->statut }}   
-                        </span>
-                        @endif
-                          
-                        </a>
                         </td>
-                      <td class="px-4 py-3 text-sm">
-                      <a class="" href="#">
-                        {{ $commande->created_at }}
-                        </a>
-                      </td>
-                      <td class=" text-xs">
-                        <a class="" href="#">
-                          <button
-                              class="block w-80 px-4 py-4   font-medium leading-5 text-center text-green-700 text-md  transition-colors duration-150 bg-green-100 border border-transparent rounded-lg active:bg-green-700 focus:outline-none  focus:shadow-outline-green"
-                            >
-                              Accepter
-                          </button>
-                          </a>
-                      </td>
-                      <td class=" text-xs">
-                        <a class="" href="#">
-                          <button
-                              class="block w-80 px-4 py-4   font-medium leading-5 text-center text-white text-md  transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 focus:outline-none  focus:shadow-outline-red"
-                            >
-                              Refuser
-                          </button>
-                        </a>
-                      </td>
-                    </tr>
-                    @endforeach
-                  @else
-                    <tr>
-                        <td colspan="4" style="text-align: center; color:red">Pas de commande encours</td>
-                    </tr>
-                  @endif
-                  @endauth
-
-                  @guest
-                      <tr>
-                        <td colspan="4" style="text-align: center; color:red">Ah ah ah ah, connecte toi pour voir les commandes</td>
-                    </tr>
-                  @endguest
-
-                  </tbody>
-                </table>
-              </div>
-              
-              
-            </div>
-            
-          </div>
-
-        </main>
+                        <td class="px-4 py-3 text-sm">
+                            @auth {{ auth()->user()->prenom }} @endauth
+                        </td>
+                        <td class="px-4 py-3 text-xs">
+                          <span
+                            class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
+                          >
+                          @auth {{ auth()->user()->contact }} @endauth
+                          </span>
+                        </td>
+                        <td class="px-4 py-3 text-sm">
+                            @auth {{ auth()->user()->email }} @endauth
+                        </td>
+                      </tr>
+                    </main>  
       </div>
     </div>
   </body>

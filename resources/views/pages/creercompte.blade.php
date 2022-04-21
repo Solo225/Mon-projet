@@ -37,66 +37,87 @@
           </div>
           <div class="flex items-center justify-center p-6 sm:p-12 md:w-1/2">
              <div class="w-full">
-            <form method="POST" action="/creercompte">
+               
+            <form method="POST" action="/creercompte" enctype="multipart/form-data">
                 @csrf
                   <h1
                     class="mb-4 text-xl font-semibold text-gray-700 dark:text-gray-200"
                   >
                     Créer un compte
                   </h1>
-                  <label class="block text-sm">
+                  <label class="block mt-4 text-sm">
                     <span class="text-gray-700 dark:text-gray-400">Nom</span>
                     <input name="nom"
-                      class="block w-full mt-1 text-smdark:border-gray-600 dark:bg-gray-700 focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                      placeholder="Jane Doe"
+                      class="block w-full mt-1 text-smdark:border-gray-600 dark:bg-gray-700 focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:text-gray-300 dark:focus:shadow-outline-gray form-input from-control"
+                      placeholder="Entrez votre nom" value="{{old('nom')  }}" required 
                     />
+                    <span class="text-red-700">@error('nom'){{ 'Non valide' }}
+                  
+                      @enderror</span>
                   </label>
-                  <label class="block text-sm">
+                  <label class="block mt-4 text-sm">
                     <span class="text-gray-700 dark:text-gray-400">Prenom(s)</span>
                     <input name="prenom"
-                      class="block w-full mt-1 text-smdark:border-gray-600 dark:bg-gray-700 focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                      placeholder="Jane Doe"
+                      class="block w-full mt-1 text-smdark:border-gray-600 dark:bg-gray-700 focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:text-gray-300 dark:focus:shadow-outline-gray form-input from-control"
+                      placeholder="Entrez votre prenom(s)" value="{{old('prenom')  }}" required
                     />
+                    <span class="text-red-700">@error('prenom'){{ 'Non valide' }}
+                      @enderror</span>
                   </label>
-                   <label class="block text-sm">
-                    <span class="text-gray-700 dark:text-gray-400">e-mail</span>
+                   <label class="block mt-4 text-sm">
+                    <span class="text-gray-700 dark:text-gray-400">E-mail</span>
                     <input name="email"
-                      class="block w-full mt-1 text-smdark:border-gray-600 dark:bg-gray-700 focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                      placeholder="ronphobos@phobos.ci"
+                      class="block w-full mt-1 text-smdark:border-gray-600 dark:bg-gray-700 focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:text-gray-300 dark:focus:shadow-outline-gray form-input from-control"
+                      placeholder="ronphobos@phobos.ci" value="{{old('email')  }}" required
                     />
+                    <span class="text-red-700">@error('email'){{ 'Non valide' }}
+                  
+                      @enderror</span>
                   </label>
                     <input type="hidden" name="type" value="client">
-                  <label class="block text-sm">
+                  <label class="block mt-4 text-sm">
                     <span class="text-gray-700 dark:text-gray-400">Contact</span>
                     <input name="contact"
-                      class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                      placeholder="00 00 00 00 00"
+                      class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:text-gray-300 dark:focus:shadow-outline-gray form-input from-control"
+                      placeholder="00 00 00 00 00" value="{{old('contact')  }}" required
+                      
                     />
+                    <span class="text-red-700">@error('contact'){{ 'Non valide ou existe déjà' }}
+                  
+                      @enderror</span>
                   </label>
                   <label class="block mt-4 text-sm">
                     <span class="text-gray-700 dark:text-gray-400">Mot de passe</span>
                     <input name="password"
-                      class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                      class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:text-gray-300 dark:focus:shadow-outline-gray form-input from-control"
                       placeholder="***************"
-                      type="password"
+                      type="password" value="{{old('password')  }}" required
+                      
                     />
+                    <span class="text-red-700">@error('password'){{ '8 caractères minimum' }}
+                  
+                      @enderror</span>
                   </label>
                   <label class="block mt-4 text-sm">
                     <span class="text-gray-700 dark:text-gray-400">
                       Confirmation
                     </span>
                     <input name="password_confirmation"
-                      class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                      class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:text-gray-300 dark:focus:shadow-outline-gray form-input  from-control"
                       placeholder="***************"
-                      type="password"
+                      type="password" value="{{old('password_confirmation')  }}" required
+                      
                     />
+                    <span class="text-red-700">@error('password_confirmation'){{ 'Non valide' }}
+                  
+                      @enderror</span>
                   </label>
 
                   <div class="flex mt-6 text-sm">
                     <label class="flex items-center dark:text-gray-400">
                       <input
                         type="checkbox"
-                        class="text-red-600 form-checkbox focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:focus:shadow-outline-gray"
+                        class="text-red-600 form-checkbox focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:focus:shadow-outline-gray" required
                       />
                       <span class="ml-2">
                       J'accepte la
