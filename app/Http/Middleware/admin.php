@@ -22,7 +22,7 @@ class admin
             return $next($request);
         } else{
             // SI NON
-            return "Yo Mec, t'es pas censé être ici, tu le sais ça ?";
+            return redirect()->route('pageclient');
         }
 
     }

@@ -15,14 +15,13 @@ return new class extends Migration
     {
         Schema::create('admins', function (Blueprint $table) {
             $table->id();
-            $table->photo();
             $table->timestamps();
         });
     }
 
     /**
      * Reverse the migrations.
-     *
+     *    
      * @return void
      */
     public function down()

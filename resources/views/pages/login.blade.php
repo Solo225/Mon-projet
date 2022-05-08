@@ -62,12 +62,13 @@
               <label class="block mt-4 text-sm">
                 <span class="text-gray-700 dark:text-gray-400">Mot de passe</span>
                 <input name="password"
-                  class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                  class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:text-gray-300 dark:focus:shadow-outline-gray form-input from-control"
                   placeholder="***************"
                   type="password" value="{{old('password')  }}" required
-                />
-                <span class="text-red-700">@error('password'){{ 'Non valide' }}
                   
+                />
+                <span class="text-red-700">@error('password'){{ 'non valide' }}
+              
                   @enderror</span>
               </label>
 

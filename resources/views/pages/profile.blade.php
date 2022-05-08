@@ -221,9 +221,6 @@
                         class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
                       >
                         <th class="px-4 py-3">Nom</th>
-                        <th class="px-4 py-3">Prenom</th>
-                        <th class="px-4 py-3">Contact</th>
-                        <th class="px-4 py-3">Email</th>
                       </tr>
                     </thead>
                     <tbody
@@ -239,20 +236,7 @@
                         <td class="px-4 py-3">
                           <div class="flex items-center text-sm">
                             <!-- Avatar with inset shadow -->
-                            <div
-                              class="relative hidden w-8 h-8 mr-3 rounded-full md:block"
-                            >
-                              <img
-                                class="object-cover w-full h-full rounded-full"
-                                src="https://images.unsplash.com/photo-1551006917-3b4c078c47c9?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
-                                alt=""
-                                loading="lazy"
-                              />
-                              <div
-                                class="absolute inset-0 rounded-full shadow-inner"
-                                aria-hidden="true"
-                              ></div>
-                            </div>
+                            
                             <div>
                               <p class="font-semibold">@auth {{ auth()->user()->nom }} @endauth</p>
                               <p class="text-xs text-gray-600 dark:text-gray-400">
@@ -261,9 +245,55 @@
                             </div>
                           </div>
                         </td>
+                        
+                      </tr>
+                    </tbody>
+                  </table>
+                  <table class="w-full whitespace-no-wrap">
+                    <thead>
+                      <tr
+                        class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
+                      >
+                        <th class="px-4 py-3">Prenom</th>
+                      </tr>
+                    </thead>
+                    <tbody
+                      class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
+                    >
+                      
+  
+                      
+  
+                      
+  
+                      <tr class="text-gray-700 dark:text-gray-400">
                         <td class="px-4 py-3 text-sm">
                             @auth {{ auth()->user()->prenom }} @endauth
                         </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <table class="w-full whitespace-no-wrap">
+                    <thead>
+                      <tr
+                        class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
+                      >
+                        
+                        <th class="px-4 py-3">Contact</th>
+                      </tr>
+                    </thead>
+                    <tbody
+                      class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
+                    >
+                      
+  
+                      
+  
+                      
+  
+                      <tr class="text-gray-700 dark:text-gray-400">
+                        
+                        
                         <td class="px-4 py-3 text-xs">
                           <span
                             class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
@@ -271,11 +301,40 @@
                           @auth {{ auth()->user()->contact }} @endauth
                           </span>
                         </td>
+                        
+                      </tr>
+                    </tbody>
+                  </table>
+                  <table class="w-full whitespace-no-wrap">
+                    <thead>
+                      <tr
+                        class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
+                      >
+                        
+                        <th class="px-4 py-3">Email</th>
+                      </tr>
+                    </thead>
+                    <tbody
+                      class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
+                    >
+                      
+  
+                      
+  
+                      
+  
+                      <tr class="text-gray-700 dark:text-gray-400">
+                        
+                        
                         <td class="px-4 py-3 text-sm">
                             @auth {{ auth()->user()->email }} @endauth
                         </td>
                       </tr>
-                    </main>  
+                    </tbody>
+                  </table>
+                  
+            </div>
+        </main>  
       </div>
     </div>
   </body>

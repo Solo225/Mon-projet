@@ -109,22 +109,7 @@
                   
                   @enderror</span>
               </label>
-              <label class="block mt-4 text-sm">
-                <span class="text-gray-700 dark:text-gray-400">Photo d'identité</span>
-                <input type="file"
-                  class="block w-full mt-1 text-smdark:border-gray-600 dark:bg-gray-700 focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:text-gray-300 dark:focus:shadow-outline-gray form-input from-control"
-                  placeholder="Entrez votre prenom(s)"  required
-                />
-                
-              </label>
-              <label class="block mt-4 text-sm">
-                <span class="text-gray-700 dark:text-gray-400">Moyen de transport</span>
-                <input type="file"
-                  class="block w-full mt-1 text-smdark:border-gray-600 dark:bg-gray-700 focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:text-gray-300 dark:focus:shadow-outline-gray form-input from-control"
-                  placeholder="Entrez votre prenom(s)" required
-                />
-                
-              </label>
+              
 
               <div class="flex mt-6 text-sm">
                 <label class="flex items-center dark:text-gray-400">

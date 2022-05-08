@@ -38,10 +38,10 @@ Route::get('/confirlivreur', [HomeController::class, 'confir'])->name('confirliv
 Route::get('/suppriLivreur', [HomeController::class, 'suppr'])->name('suppriLivreur')->middleware('auth');
 
 // ROUTE POUR L'ADMINISTRATEUR
-Route::get('/adminpage', [AdminController::class, 'dashboard'])->name('adminpage')->middleware('auth');
+Route::get('/adminpage', [AdminController::class, 'dashboard'])->name('adminpage')->middleware('admin');
+Route::get('/adminpage', [AdminController::class, 'dashboard'])->name('adminpage')->middleware('admin');
 
 // ROUTE POUR L'ADMINISTRATEUR
-Route::get('/adminpage', [AdminController::class, 'dashboard'])->name('adminpage')->middleware('auth');
 
 
 

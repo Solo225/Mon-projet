@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="/assets/landing/css/maicons.css">
     <link rel="stylesheet" href="/assets/landing/vendor/owl-carousel/css/owl.carousel.css">
     <link rel="stylesheet" href="/assets/landing/css/theme.css")}}">
+    <script src="https://cdn.tailwindcss.com"></script>
+
 
 
 </head>
@@ -52,7 +54,7 @@
             </li>
           @endif
          @endauth
-          <li class="nav-item">
+          <li class="nav-item relative bottom-2">
             <a href="/about" class="nav-link">Qui sommes-nous?</a>
           </li>
           <!-- <li class="nav-item">
@@ -61,28 +63,30 @@
 
         </ul>
     @auth
-    <div class="ml-auto">
+    <div class="navbar-nav ml-lg-4 pt-1 ">
       @auth
         @if (auth()->user()->type == "livreur")
-        <a href="/profilelivreur" class="btn btn-outline rounded-pill">Mon compte</a>
+        <a href="/profilelivreur" class="nav-link">Mon compte</a>
         @else
-        <a href="/profile" class="btn btn-outline rounded-pill">Mon compte</a>
+        <a href="/profile" class="nav-link">Mon compte</a>
         @endif
       @endauth
-      
+      <div class="relative bottom-2">
+        <a href="/logout" class="nav-link">Se déconnecter</a>
+      </div>
   </div>
-        <div class="px-3">
-            <a href="/logout" class="btn btn-outline rounded-pill">Se déconnecter</a>
-        </div>
+        
 
     @endauth
     @guest
-        <div class="ml-auto">
-          <a href="/login" class="btn btn-outline rounded-pill">Se connecter</a>
+    <div class="navbar-nav ml-lg-4 pt-1">
+        <div class="">
+          <a href="/login" class="nav-link">Se connecter</a>
         </div>
-        <div class="px-3">
-          <a href="/choix" class="btn btn-outline rounded-pill">Créer un compte</a>
+        <div class="">
+          <a href="/choix" class="nav-link">Créer un compte</a>
         </div>
+    </div>
     @endguest
 
       </div>

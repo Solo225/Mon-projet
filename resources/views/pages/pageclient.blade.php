@@ -13,6 +13,8 @@
       src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
       defer
     ></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <script src="../assets/dashboard/js/init-alpine.js"></script>
   </head>
   <body>
@@ -131,7 +133,7 @@
                             d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
                           ></path>
                         </svg>
-                        <span>Profile</span>
+                        <span>Profil</span>
                       </a>
                     </li>
                     <li class="flex">
@@ -246,15 +248,15 @@
             <!-- New Table -->
             <div class="w-full overflow-hidden rounded-lg shadow-xs">
               <div class="w-full overflow-x-auto">
-                <table class="w-full whitespace-no-wrap">
+                <table class=" text-xs w-full whitespace-no-wrap">
                   <thead>
                     <tr
                       class="text-xs  tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
                     >
-                      <th class="px-4 py-3">Commandes</th>
-                      <th class="px-4 py-3">Prix</th>
-                      <th class="px-4 py-3">Statuts</th>
-                      <th class="px-4 py-3">Dates</th>
+                      <th class="px-2 py-3">Commandes</th>
+                      <th class="px-2 py-3">Prix</th>
+                      <th class="px-2 py-3">Statuts</th>
+                      <th class="px-2 py-3">Rdv</th>
                     </tr>
                   </thead>
                   <tbody
@@ -264,7 +266,7 @@
                     @if ($commandes->count())
                     @foreach ($commandes as $commande)
                         <tr class="text-gray-700 dark:text-gray-400">
-                      <td class="px-4 py-3">
+                      <td class="px-2 py-3">
                         <a class="font-semibold" href="{{ route('recap.commande', $commande->id) }}"> {{ $commande->type_prod }}
                         <div class="flex items-center text-sm">
                           <div>
@@ -276,26 +278,42 @@
                         </div>
                         </a>
                       </td>
-                      <td class="px-4 py-3 text-sm">
+                      <td class="px-2 py-3 text-sm">
                       <a class="" href="#">
                         {{ $commande->nombre_colis }} Fcfa
                         </a>
                       </td>
-                      <td class="px-4 py-3 text-xs">
-                      <a class="" href="#">
-                        <span
-                          class="px-2 py-1  leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
-                        >
-                          Livrée
-                        </span>
-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
+                      <td class="px-2 py-3 text-xs">
+                      <a class="" href="/recap">
+                        @if ($commande->statut == "non livré")
+                      <span
+                        class="px-2 py-1  leading-tight text-red-700 bg-red-100 rounded-full dark:bg-green-700 dark:text-green-100"
                       >
-                      {{ $commande->statut }}
+                      {{ $commande->statut }}   
+                      </span>
+                      @elseif ($commande->statut == "en cours")
+                      <span
+                        class="px-2 py-1  leading-tight text-orange-700 bg-orange-100 rounded-full dark:bg-green-700 dark:text-green-100"
+                      >
+                      {{ $commande->statut }}   
+                      </span>
+                      @else
+                      <span
+                        class="px-2 py-1  leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
+                      >
+                      {{ $commande->statut }}   
                       </span>
                       @endif
-
->>>>>>> 27f8497419b5a20ad58a6078959d68c660528510
- @endforeach
+                        
+                      </a>
+                      </td>
+                      <td class="px-2 py-3 text-sm">
+                      <a class="" href="#">
+                        {{ $commande->date_depot}}
+                        </a>
+                      </td>
+                    </tr>
+                    @endforeach
                   @else
                     <tr>
                         <td colspan="4" style="text-align: center; color:red">Pas de commande encours</td>
@@ -318,7 +336,7 @@ green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
             <div class="flex-1 h-full max-w-xl mx-auto   ">
 
             <a
-                class="block w-80 px-4 py-4 mt-8  font-medium leading-5 text-center text-white text-md  transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 focus:outline-none  focus:shadow-outline-red"
+                class="block w-80 px-2 py-4 mt-8  font-medium leading-5 text-center text-white text-md  transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 focus:outline-none  focus:shadow-outline-red"
                 href="/commande"
               >
                 Nouvelle commande
