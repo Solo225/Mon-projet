@@ -41,7 +41,7 @@ Route::get('/suppriLivreur', [HomeController::class, 'suppr'])->name('suppriLivr
 Route::get('/adminpage', [AdminController::class, 'dashboard'])->name('adminpage')->middleware('auth');
 
 // ROUTE POUR L'ADMINISTRATEUR
-Route::get('/adminpage', [AdminController::class, 'dashboard'])->name('adminpage')->middleware('auth');
+// Route::get('/adminpage', [AdminController::class, 'dashboard'])->name('adminpage')->middleware('auth');
 
 
 

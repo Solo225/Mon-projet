@@ -262,40 +262,40 @@
                   >
                   @auth
                     @if ($commandes->count())
-                    @foreach ($commandes as $commande)
-                        <tr class="text-gray-700 dark:text-gray-400">
-                      <td class="px-4 py-3">
-                        <a class="font-semibold" href="{{ route('recap.commande', $commande->id) }}"> {{ $commande->type_prod }}
-                        <div class="flex items-center text-sm">
-                          <div>
+                            @foreach ($commandes as $commande)
+                                <tr class="text-gray-700 dark:text-gray-400">
+                            <td class="px-4 py-3">
+                                <a class="font-semibold" href="{{ route('recap.commande', $commande->id) }}"> {{ $commande->type_prod }}
+                                <div class="flex items-center text-sm">
+                                <div>
 
-                            <p class="text-xs text-gray-600 dark:text-gray-400">
-                              {{ $commande->transport }}
-                            </p>
-                          </div>
-                        </div>
-                        </a>
-                      </td>
-                      <td class="px-4 py-3 text-sm">
-                      <a class="" href="#">
-                        {{ $commande->nombre_colis }} Fcfa
-                        </a>
-                      </td>
-                      <td class="px-4 py-3 text-xs">
-                      <a class="" href="#">
-                        <span
-                          class="px-2 py-1  leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
-                        >
-                          Livrée
-                        </span>
-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
-                      >
-                      {{ $commande->statut }}
-                      </span>
-                      @endif
+                                    <p class="text-xs text-gray-600 dark:text-gray-400">
+                                    {{ $commande->transport }}
+                                    </p>
+                                </div>
+                                </div>
+                                </a>
+                            </td>
+                            <td class="px-4 py-3 text-sm">
+                            <a class="" href="#">
+                                {{ $commande->nombre_colis }} Fcfa
+                                </a>
+                            </td>
+                            <td class="px-4 py-3 text-xs">
+                            <a class="" href="#">
+                                <span
+                                class="px-2 py-1  leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
+                                >
+                                Livrée
+                                </span>
+        green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
+                            >
+                            {{ $commande->statut }}
+                            </span>
+                            {{-- @endif --}}
 
->>>>>>> 27f8497419b5a20ad58a6078959d68c660528510
- @endforeach
+        >>>>>>> 27f8497419b5a20ad58a6078959d68c660528510
+        @endforeach
                   @else
                     <tr>
                         <td colspan="4" style="text-align: center; color:red">Pas de commande encours</td>

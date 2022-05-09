@@ -12,7 +12,8 @@ class AdminController extends Controller
     public function dashboard()
     {
          $commandes = Commande::get();
-         $users = User::get();
+        $users = User::get();
+
         return view('pages.adminpage', compact('commandes', 'users'));
     }
 }
