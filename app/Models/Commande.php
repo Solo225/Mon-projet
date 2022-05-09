@@ -16,12 +16,18 @@ class Commande extends Model
         'transport',
         'nombre_colis',
         'point_retrait',
+        'taille',
+        'heuredepot',
+        'heure',
+        'temperature',
+        'etage',
         'date',
         'recupere',
         'contact_recup',
         'point_depot',
         'date_depot',
         'destinataire',
+        'contactdestinataire',
         'user_id',
     ];
 

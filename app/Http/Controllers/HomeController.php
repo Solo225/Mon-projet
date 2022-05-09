@@ -88,4 +88,8 @@ class HomeController extends Controller
     {
         return view('pages/suppriLivreur');
     }
+    public function valid()
+    {
+        return view('pages/commandevali');
+    }
 }

@@ -14,6 +14,8 @@
       defer
     ></script>
     <script src="../assets/dashboard/js/init-alpine.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
   </head>
   <body>
     <div

@@ -36,6 +36,7 @@ Route::get('/verifideux', [HomeController::class, 'verifi'])->name('verifideux')
 Route::get('/verifitrois', [HomeController::class, 'verif'])->name('verifitrois')->middleware('auth');
 Route::get('/confirlivreur', [HomeController::class, 'confir'])->name('confirlivreur')->middleware('auth');
 Route::get('/suppriLivreur', [HomeController::class, 'suppr'])->name('suppriLivreur')->middleware('auth');
+Route::get('/commandevali', [HomeController::class, 'valid'])->name('commandevali')->middleware('auth');
 
 // ROUTE POUR L'ADMINISTRATEUR
 Route::get('/adminpage', [AdminController::class, 'dashboard'])->name('adminpage')->middleware('admin');

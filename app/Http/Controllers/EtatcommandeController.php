@@ -43,11 +43,17 @@ class EtatcommandeController extends Controller
                 'nombre_colis' => $request->nombre_colis,
                 'point_retrait' => $request->point_retrait,
                 'date' => $request->date,
+                'taille' =>$request->taille,
+                'heure' =>$request->heure,
+                'heuredepot' =>$request->heuredepot,
+                'temperature' =>$request->temperature,
+                'etage' =>$request->etage,
                 'recupere' => $request->recupere,
                 'contact_recup' => $request->contact_recup,
                 'point_depot' => $request->point_depot,
                 'date_depot' => $request->date_depot,
                 'destinataire' => $request->destinataire,
+                'contactdestinataire' => $request->contactdestinataire,
                 'user_id' => Auth::user()->id,
              ]);
 
