@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('admins', function (Blueprint $table) {
             $table->id();
-            $table->photo();
+            $table->string('photo');
             $table->timestamps();
         });
     }
