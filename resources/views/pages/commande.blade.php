@@ -21,7 +21,7 @@
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js" integrity="sha256-6XMVI0zB8cRzfZjqKcD01PBsAy3FlDASrlC8SxCpInY=" crossorigin="anonymous"></script>
     <script src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
-    <script>
+    {{-- <script>
       $(function() {
         $( "#datepicker" ).datepicker({
            minDate : 0
@@ -36,7 +36,7 @@
     });
     
       });
-    </script>
+    </script> --}}
 
   </head>
   <body>
@@ -71,12 +71,12 @@
             <div
               class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800"
             >
-            <span class="relative flex items-center justify-center  top-4 text-3xl font-blod text-red-400">---------Collecte--------</span>
+            {{-- <span class="relative flex items-center justify-center   text-xl font-blod text-red-400">---------Collecte---------</span>
 
-            <div class="border border-red-300 border-t-transparent p-4">
+            <div class="border border-red-300 border-t-transparent p-4"> --}}
 
             
-            <span class="text-gray-700 dark:text-gray-400 font-bold">Type de colis</span>
+            {{-- <span class="text-gray-700 dark:text-gray-400 font-bold">Type de colis</span>
             <ul class="grid grid-cols-3 mt-4 gap-x-5 m-10 max-w-md mx-auto">
               <li class="relative font-blod">
                 <input class="sr-only peer" type="radio" value="courses" name="type_prod" id="answer_yes">
@@ -236,8 +236,8 @@
                </li>
             
               
-            </ul>
-            <div class="flex">
+            </ul> --}}
+            {{-- <div class="flex">
 
             
              
@@ -256,15 +256,15 @@
                 
               </label>
              
-            </div>
+            </div> --}}
 
-              <label class="block mt-4 text-sm">
+              {{-- <label class="block mt-4 text-sm">
                 <span class="text-gray-700 dark:text-gray-400 font-bold">Nom de l'expéditeur </span>
                 <input name="recupere"
                   class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                    required
                 />
-              </label>
+              </label> --}}
               <label class="block mt-4 text-sm">
                 <span class="text-gray-700 dark:text-gray-400 font-bold">Contact de l'expéditeur </span>
                 <input name="contact_recup"
@@ -279,9 +279,9 @@
                    required
                 />
               </label>
-            </div>
-            <span class="relative flex items-center justify-center  top-4 text-3xl font-blod text-red-400">---------Depôt----------</span>
-            <div class="border border-red-300 border-t-transparent p-4">
+            {{-- </div> --}}
+            {{-- <span class="relative flex items-center justify-center  mt-4 text-xl font-blod text-red-400">---------Depôt---------</span>
+            <div class="border border-red-300 border-t-transparent p-4"> --}}
 
               <label class="block mt-4 text-sm">
                 <span class="text-gray-700 dark:text-gray-400 font-bold">Point de depôt </span>
@@ -290,7 +290,7 @@
                    required
                 />
               </label>
-              <div class="flex">
+              {{-- <div class="flex">
 
             
              
@@ -309,14 +309,14 @@
                   
                 </label>
                
-              </div>
-              <label class="block mt-4 text-sm">
+              </div> --}}
+              {{-- <label class="block mt-4 text-sm">
                 <span class="text-gray-700 dark:text-gray-400 font-bold">Nom du destinataire </span>
                 <input name="destinataire"
                   class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                    required
                 />
-              </label>
+              </label> --}}
               <label class="block mt-4 text-sm">
                 <span class="text-gray-700 dark:text-gray-400 font-bold">Contact du destinataire</span>
                 <input name="contactdestinataire"
@@ -324,7 +324,7 @@
                    required
                 />
               </label>
-            </div>
+            {{-- </div> --}}
               {{-- <label class="block mt-4 text-sm">
                 <span class="text-gray-700 dark:text-gray-400">Nom de celui qui reçois le colis </span>
                 <input

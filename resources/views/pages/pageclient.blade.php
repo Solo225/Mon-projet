@@ -253,10 +253,9 @@
                     <tr
                       class="text-xs  tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
                     >
-                      <th class="px-2 py-3">Commandes</th>
+                      <th class="px-2 py-3">Itinéraire</th>
                       <th class="px-2 py-3">Prix</th>
                       <th class="px-2 py-3">Statuts</th>
-                      <th class="px-2 py-3">Rdv</th>
                     </tr>
                   </thead>
                   <tbody
@@ -267,12 +266,12 @@
                     @foreach ($commandes as $commande)
                         <tr class="text-gray-700 dark:text-gray-400">
                       <td class="px-2 py-3">
-                        <a class="font-semibold" href="{{ route('recap.commande', $commande->id) }}"> {{ $commande->type_prod }}
+                        <a class="font-semibold" href="{{ route('recap.commande', $commande->id) }}"> {{ $commande->point_retrait }}
                         <div class="flex items-center text-sm">
                           <div>
 
                             <p class="text-xs text-gray-600 dark:text-gray-400">
-                              {{ $commande->transport }}
+                              {{ $commande->point_depot}}
                             </p>
                           </div>
                         </div>
@@ -307,11 +306,7 @@
                         
                       </a>
                       </td>
-                      <td class="px-2 py-3 text-sm">
-                      <a class="" href="#">
-                        {{ $commande->date_depot}}
-                        </a>
-                      </td>
+                      
                     </tr>
                     @endforeach
                   @else
