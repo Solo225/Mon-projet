@@ -43,6 +43,10 @@ Route::get('/adminpage', [AdminController::class, 'dashboard'])->name('adminpage
 Route::get('/adminpage', [AdminController::class, 'dashboard'])->name('adminpage')->middleware('admin');
 
 // ROUTE POUR L'ADMINISTRATEUR
+<<<<<<< HEAD
+=======
+// Route::get('/adminpage', [AdminController::class, 'dashboard'])->name('adminpage')->middleware('auth');
+>>>>>>> 52bd18dd6bf306652c7e68a7d0a7a70800e19dce
 
 
 
@@ -52,8 +56,8 @@ Route::get('/adminpage', [AdminController::class, 'dashboard'])->name('adminpage
 
 Route::get('/admin', function(){
     return view('layouts/dashboard');
-});
 
+})->middleware('admin');
 Route::get('/oublie', function(){
     return view('pages/oublie');
 });
