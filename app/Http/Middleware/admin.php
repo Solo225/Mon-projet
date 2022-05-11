@@ -22,11 +22,7 @@ class admin
             return $next($request);
         } else{
             // SI NON
-<<<<<<< HEAD
             return redirect()->route('pageclient');
-=======
-            return response()->json("Yo Mec, t'es pas censé être ici, tu le sais ça ?");
->>>>>>> 52bd18dd6bf306652c7e68a7d0a7a70800e19dce
         }
 
     }
