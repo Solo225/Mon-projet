@@ -11,22 +11,9 @@ class Commande extends Model
 
     // CHAMPS PRIS EN COMPTE PAR LA BD
     protected $fillable = [
-        // 'type_prod',
-        // 'poids',
-        // 'transport',
-        // 'nombre_colis',
         'point_retrait',
-        // 'taille',
-        // 'heuredepot',
-        // 'heure',
-        // 'temperature',
-        // 'etage',
-        // 'date',
-        // 'recupere',
         'contact_recup',
         'point_depot',
-        // 'date_depot',
-        // 'destinataire',
         'contactdestinataire',
         'user_id',
     ];

@@ -21,38 +21,19 @@ class EtatcommandeController extends Controller
          if (Auth::user()) {
             // VALIDER LES DONNEES DE LA BASE DONNEE
             $this->validate($request, [
-                // 'type_prod' => 'required',
-                // 'poids' => 'required',
-                // 'transport' => 'required',
-                // 'nombre_colis' => 'required',
                 'point_retrait' => 'required',
-                // 'date' => 'required',
-                // 'recupere' => 'required',
                 'contact_recup' => 'required|digits:10',
                 'point_depot' => 'required',
-                // 'date_depot' => 'required',
+
                 'contactdestinataire' => 'required|digits:10',
             ]);
 
 
             // ENVOIE DES DONNEES DE LA BASE DE DONNEES
             Commande::create([
-                // 'type_prod' => $request->type_prod,
-                // 'poids' => $request->poids,
-                // 'transport' => $request->transport,
-                // 'nombre_colis' => $request->nombre_colis,
                 'point_retrait' => $request->point_retrait,
-                // 'date' => $request->date,
-                // 'taille' =>$request->taille,
-                // 'heure' =>$request->heure,
-                // 'heuredepot' =>$request->heuredepot,
-                // 'temperature' =>$request->temperature,
-                // 'etage' =>$request->etage,
-                // 'recupere' => $request->recupere,
                 'contact_recup' => $request->contact_recup,
                 'point_depot' => $request->point_depot,
-                // 'date_depot' => $request->date_depot,
-                // 'destinataire' => $request->destinataire,
                 'contactdestinataire' => $request->contactdestinataire,
                 'user_id' => Auth::user()->id,
              ]);
