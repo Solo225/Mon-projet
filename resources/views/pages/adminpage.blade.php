@@ -264,7 +264,35 @@
                   <p
                     class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400"
                   >
-                    Total Livreur
+                    Commande Livrée
+                  </p>
+                  <p
+                    class="text-lg  text-gray-700 dark:text-gray-200"
+                  >
+                    {{ $users->count() }}
+                  </p>
+                  </a>
+                </div>
+                <div>
+                  <a href="/confirlivreur">
+                  <p
+                    class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400"
+                  >
+                    Commande en cours
+                  </p>
+                  <p
+                    class="text-lg  text-gray-700 dark:text-gray-200"
+                  >
+                    {{ $users->count() }}
+                  </p>
+                  </a>
+                </div>
+                <div>
+                  <a href="/confirlivreur">
+                  <p
+                    class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400"
+                  >
+                    Commande en attente de validation
                   </p>
                   <p
                     class="text-lg  text-gray-700 dark:text-gray-200"

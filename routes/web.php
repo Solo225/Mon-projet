@@ -40,7 +40,7 @@ Route::get('/commandevali', [HomeController::class, 'valid'])->name('commandeval
 
 // ROUTE POUR L'ADMINISTRATEUR
 Route::get('/adminpage', [AdminController::class, 'dashboard'])->name('adminpage')->middleware('admin');
-// Route::get('/adminpage', [AdminController::class, 'dashboard'])->name('adminpage')->middleware('admin');
+Route::get('/adminpage', [AdminController::class, 'dashboard'])->name('adminpage')->middleware('admin');
 
 // ROUTE POUR L'ADMINISTRATEUR
 
