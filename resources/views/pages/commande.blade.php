@@ -106,7 +106,7 @@
             <button
                 class="block w-80 px-4 py-4 mt-8  font-medium leading-5 text-center text-white text-md  transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 focus:outline-none  focus:shadow-outline-red"
               >
-                
+                Commander
             </button>
             </div>
           </div>

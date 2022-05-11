@@ -40,13 +40,9 @@ Route::get('/commandevali', [HomeController::class, 'valid'])->name('commandeval
 
 // ROUTE POUR L'ADMINISTRATEUR
 Route::get('/adminpage', [AdminController::class, 'dashboard'])->name('adminpage')->middleware('admin');
-Route::get('/adminpage', [AdminController::class, 'dashboard'])->name('adminpage')->middleware('admin');
+// Route::get('/adminpage', [AdminController::class, 'dashboard'])->name('adminpage')->middleware('admin');
 
 // ROUTE POUR L'ADMINISTRATEUR
-<<<<<<< HEAD
-=======
-// Route::get('/adminpage', [AdminController::class, 'dashboard'])->name('adminpage')->middleware('auth');
->>>>>>> 52bd18dd6bf306652c7e68a7d0a7a70800e19dce
 
 
 
