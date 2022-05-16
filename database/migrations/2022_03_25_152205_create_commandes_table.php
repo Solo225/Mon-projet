@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('point_retrait');
             $table->string('contact_recup');
-             $table->string('point_depot');
+            $table->string('point_depot');
             $table->string('contactdestinataire');
             $table->string('statut')->default('non livré');
             $table->unsignedBigInteger('user_id')->index();
