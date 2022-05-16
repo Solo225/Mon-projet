@@ -264,14 +264,14 @@
                   @auth
                     @if ($commandes->count())
                     @foreach ($commandes as $commande)
-                        <tr class="text-gray-700 dark:text-gray-400">
+                      <tr class="text-gray-700 dark:text-gray-400">
                       <td class="px-2 py-3">
-                        <a class="font-semibold" href="{{ route('recap.commande', $commande->id) }}"> {{ $commande->point_retrait }}
+                        <a class="font-semibold" href="{{ route('recap.commande', $commande->id) }}"> {{ $commande->point_depot }}
                         <div class="flex items-center text-sm">
                           <div>
 
                             <p class="text-xs text-gray-600 dark:text-gray-400">
-                              {{ $commande->point_depot}}
+                              {{ $commande->point_retrait}}
                             </p>
                           </div>
                         </div>

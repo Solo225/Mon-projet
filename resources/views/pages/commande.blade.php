@@ -76,10 +76,10 @@
                 <select name="point_retrait"
                   class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:focus:shadow-outline-gray"
                 >
-                  <option value="1 kg">Maroc</option>
-                  <option value="3 kg">Palmeraie</option>
-                  <option value="entre 3 et 10kg">Port-bouet</option>
-                  <option value="sup à 10kg">Bassam</option>
+                  <option value="Maroc">Maroc</option>
+                  <option value="Palmeraie">Palmeraie</option>
+                  <option value="Port-bouet">Port-bouet</option>
+                  <option value="Bassam">Bassam</option>
                 </select>
               </label>
               <label class="block mt-4 text-sm">
@@ -95,10 +95,10 @@
                 <select name="point_depot"
                   class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:focus:shadow-outline-gray"
                 >
-                  <option value="1 kg">Yopougon</option>
-                  <option value="3 kg">Adjamé</option>
-                  <option value="entre 3 et 10kg">Abobo</option>
-                  <option value="sup à 10kg">Rivera</option>
+                  <option value="Yopougon">Yopougon</option>
+                  <option value="Adjamé">Adjamé</option>
+                  <option value="Abobo">Abobo</option>
+                  <option value="Riviera">Riviera</option>
                 </select>
               </label>
               <label class="block mt-4 text-sm">
