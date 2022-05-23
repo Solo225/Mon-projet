@@ -38,6 +38,11 @@ Route::get('/confirlivreur', [HomeController::class, 'confir'])->name('confirliv
 Route::get('/suppriLivreur', [HomeController::class, 'suppr'])->name('suppriLivreur')->middleware('auth');
 Route::get('/commandevali', [HomeController::class, 'valid'])->name('commandevali')->middleware('auth');
 
+Route::put('/commande-acceptee/{commande}', [AdminController::class, 'acceptee'])->name('commande-acceptee')->middleware('auth');
+Route::put('/commande-refusee/{commande}', [AdminController::class, 'refusee'])->name('commande-refusee')->middleware('auth');
+
+
+
 // ROUTE POUR L'ADMINISTRATEUR
 Route::get('/adminpage', [AdminController::class, 'dashboard'])->name('adminpage')->middleware('admin');
 Route::get('/adminpage', [AdminController::class, 'dashboard'])->name('adminpage')->middleware('admin');

@@ -273,8 +273,8 @@
                   </p>
                   </a>
                 </div>
-               
-                
+
+
 
               </div>
               <div
@@ -303,8 +303,8 @@
                 </p>
                 </a>
               </div>
-             
-              
+
+
 
             </div>
             <div
@@ -333,8 +333,8 @@
               </p>
               </a>
             </div>
-           
-            
+
+
 
           </div>
               <!-- Card -->
@@ -396,22 +396,32 @@
                         </a>
                       </td>
                       <td class=" text-xs">
-                        <a class="" href="#">
-                          <button
-                              class="block w-80 px-4 py-4   font-medium leading-5 text-center text-green-700 text-md  transition-colors duration-150 bg-green-100 border border-transparent rounded-lg active:bg-green-700 focus:outline-none  focus:shadow-outline-green"
-                            >
-                              Accepter
-                          </button>
-                          </a>
+                          <form action="{{ route('commande-acceptee', $commande->id) }}" method="POST">
+                            @csrf
+                            @method('PUT')
+                            <input type="hidden" name="statut" value="acceptée">
+                            <a class="">
+                            <button
+                                class="block w-80 px-4 py-4   font-medium leading-5 text-center text-green-700 text-md  transition-colors duration-150 bg-green-100 border border-transparent rounded-lg active:bg-green-700 focus:outline-none  focus:shadow-outline-green"
+                                >
+                                Accepter
+                            </button>
+                            </a>
+                        </form>
                       </td>
                       <td class=" text-xs">
-                        <a class="" href="#">
-                          <button
-                              class="block w-80 px-4 py-4   font-medium leading-5 text-center text-white text-md  transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 focus:outline-none  focus:shadow-outline-red"
-                            >
-                              Refuser
-                          </button>
+                        <form action="{{ route('commande-refusee', $commande->id) }}" method="POST">
+                            @csrf
+                            @method('PUT')
+                            <input type="hidden" name="statut" value="refusée">
+                            <a class="" >
+                            <button
+                                class="block w-80 px-4 py-4   font-medium leading-5 text-center text-white text-md  transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 focus:outline-none  focus:shadow-outline-red"
+                                >
+                                Refuser
+                            </button>
                           </a>
+                        </form>
                       </td>
                     </tr>
                     @endforeach
