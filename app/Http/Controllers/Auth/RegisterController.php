@@ -60,12 +60,13 @@ class RegisterController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        // ENVOYER LE MAIL DE CONFIMATION ICI
-        Mail::to($request->email)
-            ->send(new ConfirmationCompte($request->except('_token')));
 
         // CREATION DE LA SESSION UTILISATEUR
         if (Auth::attempt(['contact' => $request->contact, 'password' => $request->password])) {
+
+            // ENVOYER LE MAIL DE CONFIMATION ICI
+            Mail::to(auth()->user()->email)
+                ->send(new ConfirmationCompte($request->except('_token')));
 
             // REDIRECTION
             return redirect('/');
