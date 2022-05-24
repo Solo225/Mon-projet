@@ -79,6 +79,15 @@
                   <option value="Maroc">Maroc</option>
                   <option value="Palmeraie">Palmeraie</option>
                   <option value="Port-bouet">Port-bouet</option>
+                  <option value="Port-bouet">Port-bouet</option>
+                  <option value="Port-bouet">Port-bouet</option>
+                  <option value="Port-bouet">Port-bouet</option>
+                  <option value="Port-bouet">Port-bouet</option>
+                  <option value="Port-bouet">Port-bouet</option>
+                  <option value="Port-bouet">Port-bouet</option>
+                  <option value="Port-bouet">Port-bouet</option>
+                  <option value="Port-bouet">Port-bouet</option>
+                  <option value="Port-bouet">Port-bouet</option>
                   <option value="Bassam">Bassam</option>
                 </select>
               </label>
@@ -98,6 +107,14 @@
                   <option value="Yopougon">Yopougon</option>
                   <option value="Adjamé">Adjamé</option>
                   <option value="Abobo">Abobo</option>
+                  <option value="Riviera">Riviera</option>
+                  <option value="Riviera">Riviera</option>
+                  <option value="Riviera">Riviera</option>
+                  <option value="Riviera">Riviera</option>
+                  <option value="Riviera">Riviera</option>
+                  <option value="Riviera">Riviera</option>
+                  <option value="Riviera">Riviera</option>
+                  <option value="Riviera">Riviera</option>
                   <option value="Riviera">Riviera</option>
                 </select>
               </label>

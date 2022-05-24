@@ -14,6 +14,8 @@
       defer
     ></script>
     <script src="../assets/dashboard/js/init-alpine.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
   </head>
   <body>
     <div
@@ -37,7 +39,7 @@
                 class="w-6 h-6"
                 aria-hidden="true"
                 fill="currentColor"
-                
+
                 viewBox="0 0 20 20"
               >
                 <path
@@ -183,14 +185,13 @@
                       d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                     ></path>
                   </svg>
-                   Liste des livreurs
+                   @auth {{ auth()->user()->nom }} @endauth Historique
                 </div>
               </a>
 
             <!-- Cards -->
             <div class="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">
               <!-- Card -->
-            
               <div
                 class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800"
               >
@@ -204,17 +205,53 @@
                   </svg>
                 </div>
                 <div>
-                  <a href="/confirlivreur">
+                  <a href="/adminpage">
                   <p
                     class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400"
                   >
-                    Total Livreur
+                    Total commandes
                   </p>
-                  
-                  </a>
+                  <p
+                    class="text-lg  text-gray-700 dark:text-gray-200"
+                  >
+                    {{ $commandes->count() }}
+                  </p>
+                </a>
                 </div>
-
               </div>
+              
+              
+             
+            <div
+            class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800"
+          >
+            <div
+              class="p-3 mr-4 text-orange-500 bg-orange-100 rounded-full dark:text-orange-100 dark:bg-orange-500"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"
+                ></path>
+              </svg>
+            </div>
+            <div>
+              <a href="/confirlivreur">
+              <p
+                class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400"
+              >
+                Commande attente
+              </p>
+              <p
+                class="text-lg  text-gray-700 dark:text-gray-200"
+              >
+                {{ $commandes->count() }}
+              </p>
+              </a>
+            </div>
+
+
+
+          </div>
               <!-- Card -->
 
 
@@ -229,16 +266,106 @@
                     <tr
                       class="text-xs  tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
                     >
-                      <th class="px-4 py-3">Livreur</th>
-                      <th class="px-4 py-3">Lorem</th>
-                      <th class="px-4 py-3">Lorem</th>
-                      <th class="px-4 py-3">Lorem</th>
+                      <th class="px-4 py-3">Itinéraie</th>
+                      <th class="px-4 py-3">Prix</th>
+                      <th class="px-4 py-3">Statuts</th>
+                      <th class="px-4 py-3">Dates</th>
                     </tr>
                   </thead>
                   <tbody
                     class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
                   >
-                  
+                  @auth
+                    @if ($commandes->count())
+                    @foreach ($commandes as $commande)
+                        <tr class="text-gray-700 dark:text-gray-400">
+                      <td class="px-4 py-3">
+                        <a class="font-semibold" href="{{ route('recap.commande', $commande->id) }}"> {{ $commande->point_depot }}
+                        <div class="flex items-center text-sm">
+                          <div>
+
+                            <p class="text-xs text-gray-600 dark:text-gray-400">
+                              {{ $commande->point_retrait }}
+                            </p>
+                          </div>
+                        </div>
+                        </a>
+                      </td>
+                      <td class="px-4 py-3 text-sm">
+                      <a class="" href="#">
+                        {{ $commande->nombre_colis }} Fcfa
+                        </a>
+                      </td>
+                      <td class="px-4 py-3 text-xs">
+                        @if($commande->statut == "acceptée")
+                          <a class="" href="#">
+                          <span class="px-2 py-1  leading-tight text-green-700 bg-green-100 rounded-full dark:bg-yellow-700 dark:text-green-100">
+                            En cours
+                          </span>
+                        </a>
+                        @elseif ($commande->statut == "livrée")
+                        <a class="" href="#">
+                          <span class="px-2 py-1  leading-tight text-yellow-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
+                            Livrée
+                          </span>
+                        </a>
+                        @elseif ($commande->statut == "non livré")
+                        <a class="" href="#">
+                          <span class="px-2 py-1  leading-tight text-red-700 bg-red-100 rounded-full dark:bg-red-700 dark:text-green-100">
+                            Annulée
+                          </span>
+                        </a>
+                        @endif
+
+                      </td>
+                      <td class="px-4 py-3 text-sm">
+                      <a class="" href="/recap">
+                        {{ $commande->created_at }}
+                        </a>
+                      </td>
+                      <td class=" text-xs">
+                          <form action="{{ route('commande-acceptee', $commande->id) }}" method="POST">
+                            @csrf
+                            @method('PUT')
+                            <input type="hidden" name="statut" value="acceptée">
+                            <a class="">
+                            <button
+                                class="block w-80 px-4 py-4   font-medium leading-5 text-center text-green-700 text-md  transition-colors duration-150 bg-green-100 border border-transparent rounded-lg active:bg-green-700 focus:outline-none  focus:shadow-outline-green"
+                                >
+                                Accepter
+                            </button>
+                            </a>
+                        </form>
+                      </td>
+                      <td class=" text-xs">
+                        <form action="{{ route('commande-refusee', $commande->id) }}" method="POST">
+                            @csrf
+                            @method('PUT')
+                            <input type="hidden" name="statut" value="refusée">
+                            <a class="" >
+                            <button
+                                class="block w-80 px-4 py-4   font-medium leading-5 text-center text-white text-md  transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 focus:outline-none  focus:shadow-outline-red"
+                                >
+                                Refuser
+                            </button>
+                          </a>
+                        </form>
+                      </td>
+                    </tr>
+                    @endforeach
+                  @else
+                    <tr>
+                        <td colspan="4" style="text-align: center; color:red">Pas de commande encours</td>
+                    </tr>
+                  @endif
+                  @endauth
+
+                  @guest
+                      <tr>
+                        <td colspan="4" style="text-align: center; color:red">Ah ah ah ah, connecte toi pour voir les commandes</td>
+                    </tr>
+                  @endguest
+
                   </tbody>
                 </table>
               </div>

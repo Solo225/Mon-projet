@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\Auth;
 class HomeController extends Controller
 {
     // FONCTION DE RENVOIE DE COMMANDE SUR LA PAGE D'ACCUEIL
+    public function confir()
+    {
+        $commandes = Commande::where('user_id', Auth::user()->id)->get();
+        return view('pages.confirlivreur', compact('commandes'));
+    }
     public function pageClient()
     {
         // RENVOYONS TOUTES LES COMMANDES
@@ -80,10 +85,7 @@ class HomeController extends Controller
     {
         return view('pages/verifitrois');
     }
-    public function confir()
-    {
-        return view('pages/confirlivreur');
-    }
+    
     public function suppr()
     {
         return view('pages/suppriLivreur');
