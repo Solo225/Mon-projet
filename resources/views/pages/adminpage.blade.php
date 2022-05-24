@@ -385,7 +385,19 @@
                         @if($commande->nombre_colis == "acceptée")
                           <a class="" href="#">
                           <span class="px-2 py-1  leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
+                            En cours
+                          </span>
+                        </a>
+                        @elseif ($commande->nombre_colis == "livrée")
+                        <a class="" href="#">
+                          <span class="px-2 py-1  leading-tight text-yellow-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
                             Livrée
+                          </span>
+                        </a>
+                        @else
+                        <a class="" href="#">
+                          <span class="px-2 py-1  leading-tight text-red-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
+                            Annulée
                           </span>
                         </a>
                         @endif
