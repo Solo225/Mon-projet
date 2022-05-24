@@ -16,9 +16,13 @@ class ConfirmationCompte extends Mailable
      *
      * @return void
      */
-    public function __construct()
+
+    public $contact;
+
+    public function __construct(Array $message)
     {
         //
+        $this->contact = $message;
     }
 
     /**
@@ -28,6 +32,6 @@ class ConfirmationCompte extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        return $this->from('arouna2058@gmail.com')->view('mail.confirmation');
     }
 }
