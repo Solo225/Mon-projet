@@ -382,13 +382,14 @@
                         </a>
                       </td>
                       <td class="px-4 py-3 text-xs">
-                      <a class="" href="#">
-                        <span
-                          class="px-2 py-1  leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
-                        >
-                          Livrée
-                        </span>
+                        @if($commande->nombre_colis == "acceptée")
+                          <a class="" href="#">
+                          <span class="px-2 py-1  leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
+                            Livrée
+                          </span>
                         </a>
+                        @endif
+
                       </td>
                       <td class="px-4 py-3 text-sm">
                       <a class="" href="/recap">
