@@ -76,19 +76,22 @@
                 <select name="point_retrait"
                   class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:focus:shadow-outline-gray"
                 >
-                  <option value="Maroc">Maroc</option>
-                  <option value="Palmeraie">Palmeraie</option>
-                  <option value="Port-bouet">Port-bouet</option>
-                  <option value="Port-bouet">Port-bouet</option>
-                  <option value="Port-bouet">Port-bouet</option>
-                  <option value="Port-bouet">Port-bouet</option>
-                  <option value="Port-bouet">Port-bouet</option>
-                  <option value="Port-bouet">Port-bouet</option>
-                  <option value="Port-bouet">Port-bouet</option>
-                  <option value="Port-bouet">Port-bouet</option>
-                  <option value="Port-bouet">Port-bouet</option>
-                  <option value="Port-bouet">Port-bouet</option>
-                  <option value="Bassam">Bassam</option>
+                <option value="ABOBO">ABOBO</option>
+                <option value="Adjamé">ADJAME</option>
+                <option value="ANYAMA">ANYAMA</option>
+                <option value="ATTECOUBE">ATTECOUBE</option>
+                <option value="BINGERVILLE">BINGERVILLE</option>
+                <option value="COCODY">COCODY</option>
+                <option value="KOUMASSI">KOUMASSI</option>
+                <option value="MACORY">MARCORY</option>
+                <option value="PLATEAU">PLATEAU</option>
+                <option value="PORTBOUET">PORTBOUET</option>
+                <option value="TREICHVILLE">TREICHVILLE</option>
+                <option value="SONGON">SONGON</option>
+                <option value="YOPOUGON">YOPOUGON</option>
+                <option value="GONZAGUE-VILLE">GONZAGUE-VILLE</option>
+                <option value="ANANI">ANANI</option>
+                <option value="BASSAM">BASSAM</option>
                 </select>
               </label>
               <label class="block mt-4 text-sm">
@@ -104,18 +107,22 @@
                 <select name="point_depot"
                   class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:focus:shadow-outline-gray"
                 >
-                  <option value="Yopougon">Yopougon</option>
-                  <option value="Adjamé">Adjamé</option>
-                  <option value="Abobo">Abobo</option>
-                  <option value="Riviera">Riviera</option>
-                  <option value="Riviera">Riviera</option>
-                  <option value="Riviera">Riviera</option>
-                  <option value="Riviera">Riviera</option>
-                  <option value="Riviera">Riviera</option>
-                  <option value="Riviera">Riviera</option>
-                  <option value="Riviera">Riviera</option>
-                  <option value="Riviera">Riviera</option>
-                  <option value="Riviera">Riviera</option>
+                  <option value="ABOBO">ABOBO</option>
+                  <option value="Adjamé">ADJAME</option>
+                  <option value="ANYAMA">ANYAMA</option>
+                  <option value="ATTECOUBE">ATTECOUBE</option>
+                  <option value="BINGERVILLE">BINGERVILLE</option>
+                  <option value="COCODY">COCODY</option>
+                  <option value="KOUMASSI">KOUMASSI</option>
+                  <option value="MACORY">MARCORY</option>
+                  <option value="PLATEAU">PLATEAU</option>
+                  <option value="PORTBOUET">PORTBOUET</option>
+                  <option value="TREICHVILLE">TREICHVILLE</option>
+                  <option value="SONGON">SONGON</option>
+                  <option value="YOPOUGON">YOPOUGON</option>
+                  <option value="GONZAGUE-VILLE">GONZAGUE-VILLE</option>
+                  <option value="ANANI">ANANI</option>
+                  <option value="BASSAM">BASSAM</option>
                 </select>
               </label>
               <label class="block mt-4 text-sm">
