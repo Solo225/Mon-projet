@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('contact_recup');
             $table->string('point_depot');
             $table->string('contactdestinataire');
-            $table->string('statut')->default("En attante");
+            $table->string('statut')->default("encours");
             $table->unsignedBigInteger('user_id')->index();
             $table->timestamps();
         });

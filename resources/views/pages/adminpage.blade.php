@@ -315,7 +315,7 @@
                               {{ $commande->point_retrait }}
                             </p>
                           </div>
-                          
+
                         </div>
                         </a>
                       </td>
@@ -331,13 +331,13 @@
                             En cours
                           </span>
                         </a>
-                        @elseif ($commande->statut == "livrée")
+                        @elseif ($commande->statut == "encours")
                         <a class="" href="#">
                           <span class="px-2 py-1  leading-tight text-yellow-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
                             Livrée
                           </span>
                         </a>
-                        @elseif ($commande->statut == "non livré")
+                        @elseif ($commande->statut == "annulee")
                         <a class="" href="#">
                           <span class="px-2 py-1  leading-tight text-red-700 bg-red-100 rounded-full dark:bg-red-700 dark:text-green-100">
                             Annulée

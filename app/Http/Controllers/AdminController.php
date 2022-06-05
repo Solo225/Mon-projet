@@ -12,7 +12,8 @@ class AdminController extends Controller
     // PAGE ADMINISTRATEUR
     public function dashboard()
     {
-         $commandes = Commande::where('statut', '!=' ,'livrée')->get();
+        //  $commandes = Commande::where('statut', '!=' ,'livrée')->get();
+        $commandes = Commande::get();
         $users = User::get();
 
         return view('pages.adminpage', compact('commandes', 'users'));
@@ -20,14 +21,22 @@ class AdminController extends Controller
 
     public function acceptee(Commande $commande, Request $request)
     {
-          $commande->update([
-                'contact_recup' => $commande->contact_recup,
-                'point_retrait' => $commande->point_retrait,
-                'point_depot' => $commande->point_depot,
-                'contactdestinataire' => $commande->contactdestinataire,
-                'statut' => $request->statut,
-                'user_id' => $commande->user_id,
-             ]);
+        //   $commande->update([
+        //         'contact_recup' => $commande->contact_recup,
+        //         'point_retrait' => $commande->point_retrait,
+        //         'point_depot' => $commande->point_depot,
+        //         'contactdestinataire' => $commande->contactdestinataire,
+        //         'statut' => $request->statut,
+        //         'user_id' => $commande->user_id,
+        //      ]);
+
+        $commande->contact_recup =  $commande->contact_recup;
+        $commande->contactdestinataire =  $commande->contactdestinataire;
+        $commande->point_retrait =  $commande->point_retrait;
+        $commande->point_depot =  $commande->point_depot;
+        $commande->statut =  $request->statut;
+        $commande->user_id =  $commande->user_id;
+        $commande->update();
 
 
         return redirect()->route('adminpage')->with('succès', 'Commande Acceptée');
@@ -35,14 +44,23 @@ class AdminController extends Controller
 
     public function refusee(Commande $commande, Request $request)
     {
-         $commande->update([
-                'contact_recup' => $commande->contact_recup,
-                'point_retrait' => $commande->point_retrait,
-                'point_depot' => $commande->point_depot,
-                'contactdestinataire' => $commande->contactdestinataire,
-                'statut' => 'refusée',
-                'user_id' => $commande->user_id,
-             ]);
+        // METTONS LES INFORMATIONS A JOUR
+        //  $commande->update([
+        //         'contact_recup' => $commande->contact_recup,
+        //         'point_retrait' => $commande->point_retrait,
+        //         'point_depot' => $commande->point_depot,
+        //         'contactdestinataire' => $commande->contactdestinataire,
+        //         'statut' => $request->statut,
+        //         'user_id' => $commande->user_id,
+        //      ]);
+
+        $commande->contact_recup =  $commande->contact_recup;
+        $commande->contactdestinataire =  $commande->contactdestinataire;
+        $commande->point_retrait =  $commande->point_retrait;
+        $commande->point_depot =  $commande->point_depot;
+        $commande->statut =  $request->statut;
+        $commande->user_id =  $commande->user_id;
+        $commande->update();
 
         return redirect()->back();
     }
