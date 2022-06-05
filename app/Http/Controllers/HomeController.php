@@ -85,13 +85,13 @@ class HomeController extends Controller
     {
         return view('pages/verifitrois');
     }
-    
+
     public function suppr()
     {
         return view('pages/suppriLivreur');
     }
     public function valid()
     {
-        return view('pages/commandevali');
+        return view('pages.commandevali');
     }
 }

@@ -50,9 +50,8 @@
 
         <main class="h-full pb-16 overflow-y-auto">
           <div class="container px-6 mx-auto grid">
-            <form action="/commande" method="POST">
+            <form action="{{ route('commande.verification') }}" method="POST">
                 @csrf
-
             <h2
               class="my-6 text-2xl font-bold text-gray-700 dark:text-gray-200"
             >
@@ -63,10 +62,8 @@
               class="flex items-center justify-between p-4 mb-8  text-red-100 bg-red-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-red"
               href="/pageclient"
             >
-
               <span class="text-white text-sm font-bold ">Revenir à l'historique &RightArrow;</span>
             </a>
-
 
             <div
               class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800"
@@ -76,11 +73,11 @@
                 <select name="point_retrait"
                   class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:focus:shadow-outline-gray"
                 >
-                <option value="ABOBO">ABOBO</option>
-                <option value="Adjamé">ADJAME</option>
-                <option value="ANYAMA">ANYAMA</option>
-                <option value="ATTECOUBE">ATTECOUBE</option>
-                <option value="BINGERVILLE">BINGERVILLE</option>
+                <option value="200">ABOBO</option>
+                <option value="300">ADJAME</option>
+                <option value="400">ANYAMA</option>
+                <option value="100">ATTECOUBE</option>
+                <option value="50">BINGERVILLE</option>
                 <option value="COCODY">COCODY</option>
                 <option value="KOUMASSI">KOUMASSI</option>
                 <option value="MACORY">MARCORY</option>
@@ -107,9 +104,9 @@
                 <select name="point_depot"
                   class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:focus:shadow-outline-gray"
                 >
-                  <option value="ABOBO">ABOBO</option>
-                  <option value="Adjamé">ADJAME</option>
-                  <option value="ANYAMA">ANYAMA</option>
+                  <option value="40">ABOBO</option>
+                  <option value="440">ADJAME</option>
+                  <option value="200">ANYAMA</option>
                   <option value="ATTECOUBE">ATTECOUBE</option>
                   <option value="BINGERVILLE">BINGERVILLE</option>
                   <option value="COCODY">COCODY</option>
@@ -135,9 +132,6 @@
               </div>
               <div class="flex-1 h-full max-w-xl mx-auto   ">
 
-                  @php
-                      $somme_prix = 0;
-                  @endphp
 
             <button
                 class="block w-80 px-4 py-4 mt-8  font-medium leading-5 text-center text-white text-md  transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 focus:outline-none  focus:shadow-outline-red"

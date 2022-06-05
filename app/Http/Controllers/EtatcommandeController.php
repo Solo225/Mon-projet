@@ -14,6 +14,14 @@ class EtatcommandeController extends Controller
         return view('pages.commande');
     }
 
+    public function commandeStore(Request $request)
+    {
+        // recuperons les prix unitaires et faisons la somme
+        $prixTotal = $request->point_retrait + $request->point_depot;
+
+        return view('pages.commandevali', compact('prixTotal'));
+    }
+
     // CETTE FONCTION VALIDE ET ENVOIE LES COMMANDE DE LA BD
     public function store(Request $request)
     {

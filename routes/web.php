@@ -26,6 +26,7 @@ Route::get('/pageclient', [HomeController::class, 'pageClient'])->name('pageclie
 Route::get('/commande',[EtatcommandeController::class, 'commande'])->middleware('auth');
 Route::get('/recap/{commande}',[EtatcommandeController::class, 'recap'])->name('recap.commande')->middleware('auth');
 Route::post('/commande',[EtatcommandeController::class, 'store'])->middleware('auth');
+Route::post('/commande/verification',[EtatcommandeController::class, 'commandeStore'])->name('commande.verification')->middleware('auth');
 Route::get('/profile', [HomeController::class, 'profil'])->name('profile')->middleware('auth');
 Route::get('/utilisateur', [HomeController::class, 'utilisa'])->name('utilisateur');
 Route::get('/livreur', [HomeController::class, 'livraison'])->name('livreur');
