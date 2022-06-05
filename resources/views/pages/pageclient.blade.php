@@ -284,29 +284,29 @@
                       </td>
                       <td class="px-2 py-3 text-xs">
                       <a class="" href="/recap">
-                        @if ($commande->statut == "non livré")
+                        @if ($commande->statut == "annulee")
                       <span
                         class="px-2 py-1  leading-tight text-red-700 bg-red-100 rounded-full dark:bg-green-700 dark:text-green-100"
                       >
-                      {{ $commande->statut }}   
+                      {{ $commande->statut }}
                       </span>
-                      @elseif ($commande->statut == "en cours")
+                      @elseif ($commande->statut == "encours")
                       <span
                         class="px-2 py-1  leading-tight text-orange-700 bg-orange-100 rounded-full dark:bg-green-700 dark:text-green-100"
                       >
-                      {{ $commande->statut }}   
+                      {{ $commande->statut }}
                       </span>
                       @else
                       <span
                         class="px-2 py-1  leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
                       >
-                      {{ $commande->statut }}   
+                      {{ $commande->statut }}
                       </span>
                       @endif
-                        
+
                       </a>
                       </td>
-                      
+
                     </tr>
                     @endforeach
                   @else
