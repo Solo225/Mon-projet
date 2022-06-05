@@ -212,27 +212,27 @@
                 </div>
                 <span>Annuler la commande &RightArrow;</span>
               </a>
-  
+
               <!-- Wit h avatar -->
-              
+
               <div class="w-full mb-8 overflow-hidden rounded-lg shadow-xs">
                 <div class="w-full overflow-x-auto">
                   <table class="w-full whitespace-no-wrap">
-                    
+
                     <tbody
                       class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
                     >
-                      
-  
-                      
-  
-                      
-  
+
+
+
+
+
+
                       <tr class="text-gray-700 dark:text-gray-400">
                         <td class="px-4 py-3">
                           <div class="flex items-center text-sm">
                             <!-- Avatar with inset shadow -->
-                            
+
                             <div>
                               <p class="font-semibold">@auth {{ auth()->user()->nom }} @endauth</p>
                               <p class="text-xs text-gray-600 dark:text-gray-400">
@@ -241,21 +241,15 @@
                             </div>
                           </div>
                         </td>
-                        
+
                       </tr>
                     </tbody>
                   </table>
                   <table class="w-full whitespace-no-wrap">
-                    
+
                     <tbody
                       class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
                     >
-                      
-  
-                      
-  
-                      
-  
                       <tr class="text-gray-700 dark:text-gray-400">
                         <td class="px-4 py-3 text-sm">
                             @auth {{ auth()->user()->prenom }} @endauth
@@ -264,19 +258,19 @@
                     </tbody>
                   </table>
                   <table class="w-full whitespace-no-wrap">
-                    
+
                     <tbody
                       class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
                     >
-                      
-  
-                      
-  
-                      
-  
+
+
+
+
+
+
                       <tr class="text-gray-700 dark:text-gray-400">
-                        
-                        
+
+
                         <td class="px-4 py-3 text-xs">
                           <span
                             class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
@@ -284,24 +278,24 @@
                           @auth {{ auth()->user()->contact }} @endauth
                           </span>
                         </td>
-                        
+
                       </tr>
                     </tbody>
                   </table>
                   <table class="w-full whitespace-no-wrap">
-                    
+
                     <tbody
                       class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
                     >
-                      
-  
-                      
-  
-                      
-  
+
+
+
+
+
+
                       <tr class="text-gray-700 dark:text-gray-400">
-                        
-                        
+
+
                         <td class="px-4 py-3 text-sm">
                             @auth {{ auth()->user()->email }} @endauth
                         </td>
@@ -309,31 +303,31 @@
                     </tbody>
                   </table>
                   <table class="w-full whitespace-no-wrap">
-                    
+
                     <tbody
                       class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
                     >
-                      
-  
-                      
-  
-                      
-  
+
+
+
+
+
+
                       <tr class="text-gray-700 dark:text-gray-400">
-                        
-                        
+
+
                         <td class="px-4 py-3 text-sm">
-                            Prix
+                            Vous devez payer la sommes de <span style="color: green">{{ $prixTotal }} FCFA</span>. <br> Le point de dépôt coûte {{ $point_depot }} Fcfa et le point de retrait coûte {{ $point_retrait }} FCFA
                         </td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
-                  
-                  
+
+
             </div>
-            
-        </main>  
+
+        </main>
         <div class="flex-1 h-full max-w-xl mx-auto   ">
 
             <button

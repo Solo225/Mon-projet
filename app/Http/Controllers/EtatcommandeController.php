@@ -18,8 +18,10 @@ class EtatcommandeController extends Controller
     {
         // recuperons les prix unitaires et faisons la somme
         $prixTotal = $request->point_retrait + $request->point_depot;
+        $point_retrait = $request->point_retrait;
+        $point_depot = $request->point_depot;
 
-        return view('pages.commandevali', compact('prixTotal'));
+        return view('pages.commandevali', compact('prixTotal', 'point_depot', 'point_retrait'));
     }
 
     // CETTE FONCTION VALIDE ET ENVOIE LES COMMANDE DE LA BD
