@@ -40,9 +40,11 @@ class AdminController extends Controller
                 'point_retrait' => $commande->point_retrait,
                 'point_depot' => $commande->point_depot,
                 'contactdestinataire' => $commande->contactdestinataire,
-                'statut' => $request->statut,
+                'statut' => 'refusée',
                 'user_id' => $commande->user_id,
              ]);
+
+        return redirect()->back();
     }
 }
 
