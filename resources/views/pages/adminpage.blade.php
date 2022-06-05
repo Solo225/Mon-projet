@@ -315,6 +315,7 @@
                               {{ $commande->point_retrait }}
                             </p>
                           </div>
+                          
                         </div>
                         </a>
                       </td>
