@@ -12,11 +12,11 @@ class AdminController extends Controller
     // PAGE ADMINISTRATEUR
     public function dashboard()
     {
-        //  $commandes = Commande::where('statut', '!=' ,'livrée')->get();
+        $commandes_attente = Commande::where('statut', 'encours')->get();
         $commandes = Commande::get();
         $users = User::get();
 
-        return view('pages.adminpage', compact('commandes', 'users'));
+        return view('pages.adminpage', compact('commandes', 'users', 'commandes_attente'));
     }
 
     public function acceptee(Commande $commande, Request $request)
@@ -39,7 +39,7 @@ class AdminController extends Controller
         $commande->update();
 
 
-        return redirect()->route('adminpage')->with('succès', 'Commande Acceptée');
+        return redirect()->back()->with('succes', 'Commande Acceptée');
     }
 
     public function refusee(Commande $commande, Request $request)
@@ -62,7 +62,7 @@ class AdminController extends Controller
         $commande->user_id =  $commande->user_id;
         $commande->update();
 
-        return redirect()->back();
+        return redirect()->back()->with('succes', 'Commande réfusée');
     }
 }
 

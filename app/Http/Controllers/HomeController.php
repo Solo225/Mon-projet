@@ -11,7 +11,11 @@ class HomeController extends Controller
     // FONCTION DE RENVOIE DE COMMANDE SUR LA PAGE D'ACCUEIL
     public function confir()
     {
-        $commandes = Commande::where('user_id', Auth::user()->id)->get();
+        // LA LISTE DES COMMANDES EN ATTENTE DE L'UTILISATEUR CONNECTE
+        // $commandes = Commande::where('user_id', Auth::user()->id)
+        // ->where('statut', "encours")->get();
+        $commandes = Commande::where('statut', "encours")->get();
+
         return view('pages.confirlivreur', compact('commandes'));
     }
     public function pageClient()

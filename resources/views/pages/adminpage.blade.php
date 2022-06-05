@@ -271,7 +271,7 @@
               <p
                 class="text-lg  text-gray-700 dark:text-gray-200"
               >
-                {{ $users->count() }}
+                {{ $commandes_attente->count() }}
               </p>
               </a>
             </div>
@@ -303,8 +303,8 @@
                     class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
                   >
                   @auth
-                    @if ($commandes->count())
-                    @foreach ($commandes as $commande)
+                    @if ($commandes_attente->count())
+                    @foreach ($commandes_attente as $commande)
                         <tr class="text-gray-700 dark:text-gray-400">
                       <td class="px-4 py-3">
                         <a class="font-semibold" href="{{ route('recap.commande', $commande->id) }}"> {{ $commande->point_depot }}
