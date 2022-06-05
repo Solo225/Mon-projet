@@ -12,7 +12,7 @@ class AdminController extends Controller
     // PAGE ADMINISTRATEUR
     public function dashboard()
     {
-         $commandes = Commande::where('statut', 'acceptée')->get();
+         $commandes = Commande::where('statut', '!=' ,'livrée')->get();
         $users = User::get();
 
         return view('pages.adminpage', compact('commandes', 'users'));
