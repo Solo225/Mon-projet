@@ -187,156 +187,161 @@
             </ul>
           </div>
         </header>
-        <main class="h-full pb-16 overflow-y-auto">
-            <div class="container grid px-6 mx-auto">
-              <h2
-                class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200"
-              >
-                Les informations de la commande
-              </h2>
-              <!-- CTA -->
-              <a
-                class="flex items-center justify-between p-4 mb-8 text-sm font-semibold text-white bg-red-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-red"
-                href="/pageclient"
-              >
-                <div class="flex items-center">
-                  <svg
-                    class="w-5 h-5 mr-2"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                    ></path>
-                  </svg>
-                </div>
-                <span>Annuler la commande &RightArrow;</span>
-              </a>
-
-              <!-- Wit h avatar -->
-
-              <div class="w-full mb-8 overflow-hidden rounded-lg shadow-xs">
-                <div class="w-full overflow-x-auto">
-                  <table class="w-full whitespace-no-wrap">
-
-                    <tbody
-                      class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
+        <form action="/commande" method="POST">
+            @csrf
+            <main class="h-full pb-16 overflow-y-auto">
+                <div class="container grid px-6 mx-auto">
+                <h2
+                    class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200"
+                >
+                    Les informations de la commande
+                </h2>
+                <!-- CTA -->
+                <a
+                    class="flex items-center justify-between p-4 mb-8 text-sm font-semibold text-white bg-red-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-red"
+                    href="/pageclient"
+                >
+                    <div class="flex items-center">
+                    <svg
+                        class="w-5 h-5 mr-2"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
                     >
+                        <path
+                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                        ></path>
+                    </svg>
+                    </div>
+                    <span>Annuler la commande &RightArrow;</span>
+                </a>
+
+                <!-- Wit h avatar -->
+
+                <div class="w-full mb-8 overflow-hidden rounded-lg shadow-xs">
+                    <div class="w-full overflow-x-auto">
+                    <table class="w-full whitespace-no-wrap">
+
+                        <tbody
+                        class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
+                        >
 
 
 
 
 
 
-                      <tr class="text-gray-700 dark:text-gray-400">
-                        <td class="px-4 py-3">
-                          <div class="flex items-center text-sm">
-                            <!-- Avatar with inset shadow -->
+                        <tr class="text-gray-700 dark:text-gray-400">
+                            <td class="px-4 py-3">
+                            <div class="flex items-center text-sm">
+                                <!-- Avatar with inset shadow -->
 
-                            <div>
-                              <p class="font-semibold">@auth {{ auth()->user()->nom }} @endauth</p>
-                              <p class="text-xs text-gray-600 dark:text-gray-400">
-                                @auth {{ auth()->user()->type }} @endauth
-                              </p>
+                                <div>
+                                <p class="font-semibold">@auth {{ auth()->user()->nom }} @endauth</p>
+                                <p class="text-xs text-gray-600 dark:text-gray-400">
+                                    @auth {{ auth()->user()->type }} @endauth
+                                </p>
+                                </div>
                             </div>
-                          </div>
-                        </td>
+                            </td>
 
-                      </tr>
-                    </tbody>
-                  </table>
-                  <table class="w-full whitespace-no-wrap">
+                        </tr>
+                        </tbody>
+                    </table>
+                    <table class="w-full whitespace-no-wrap">
 
-                    <tbody
-                      class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
-                    >
-                      <tr class="text-gray-700 dark:text-gray-400">
-                        <td class="px-4 py-3 text-sm">
-                            @auth {{ auth()->user()->prenom }} @endauth
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <table class="w-full whitespace-no-wrap">
+                        <tbody
+                        class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
+                        >
+                        <tr class="text-gray-700 dark:text-gray-400">
+                            <td class="px-4 py-3 text-sm">
+                                @auth {{ auth()->user()->prenom }} @endauth
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <table class="w-full whitespace-no-wrap">
 
-                    <tbody
-                      class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
-                    >
-
-
-
-
-
-
-                      <tr class="text-gray-700 dark:text-gray-400">
-
-
-                        <td class="px-4 py-3 text-xs">
-                          <span
-                            class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
-                          >
-                          @auth {{ auth()->user()->contact }} @endauth
-                          </span>
-                        </td>
-
-                      </tr>
-                    </tbody>
-                  </table>
-                  <table class="w-full whitespace-no-wrap">
-
-                    <tbody
-                      class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
-                    >
+                        <tbody
+                        class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
+                        >
 
 
 
 
 
 
-                      <tr class="text-gray-700 dark:text-gray-400">
+                        <tr class="text-gray-700 dark:text-gray-400">
 
 
-                        <td class="px-4 py-3 text-sm">
-                            @auth {{ auth()->user()->email }} @endauth
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <table class="w-full whitespace-no-wrap">
+                            <td class="px-4 py-3 text-xs">
+                            <span
+                                class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
+                            >
+                            @auth {{ auth()->user()->contact }} @endauth
+                            </span>
+                            </td>
 
-                    <tbody
-                      class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
-                    >
+                        </tr>
+                        </tbody>
+                    </table>
+                    <table class="w-full whitespace-no-wrap">
 
-
-
-
-
-
-                      <tr class="text-gray-700 dark:text-gray-400">
+                        <tbody
+                        class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
+                        >
 
 
-                        <td class="px-4 py-3 text-sm">
-                            Vous devez payer la sommes de <span style="color: green">{{ $prixTotal }} FCFA</span>. <br> Le point de dépôt coûte {{ $point_depot }} Fcfa et le point de retrait coûte {{ $point_retrait }} FCFA
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
+
+
+
+
+                        <tr class="text-gray-700 dark:text-gray-400">
+
+
+                            <td class="px-4 py-3 text-sm">
+                                @auth {{ auth()->user()->email }} @endauth
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <table class="w-full whitespace-no-wrap">
+
+                        <tbody
+                        class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
+                        >
+
+
+
+
+
+
+                        <tr class="text-gray-700 dark:text-gray-400">
+
+
+                            <td class="px-4 py-3 text-sm">
+                                Vous devez payer la sommes de <span style="color: green">{{ $prixTotal }} FCFA</span>. <br> Le point de dépôt coûte {{ $point_depot }} Fcfa et le point de retrait coûte {{ $point_retrait }} FCFA
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    </div>
+
+
                 </div>
+            </main>
+            <input type="hidden" name="point_retrait" value="{{ $point_retrait }}">
+            <input type="hidden" name="point_depot" value="{{ $point_depot }}">
+            <input type="hidden" name="contactdestinataire" value="{{ $contactdestinataire }}">
+            <div class="flex-1 h-full max-w-xl mx-auto   ">
 
-
-            </div>
-
-        </main>
-        <div class="flex-1 h-full max-w-xl mx-auto   ">
-
-            <button
-                class="block w-80 px-4 py-4 mb-56  font-medium leading-5 text-center text-white text-md  transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 focus:outline-none  focus:shadow-outline-red"
-              >
-                Commander
-            </button>
-            </div>
-      </div>
+                <button
+                    class="block w-80 px-4 py-4 mb-56  font-medium leading-5 text-center text-white text-md  transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 focus:outline-none  focus:shadow-outline-red"
+                >
+                    Commander
+                </button>
+                </div>
+        </div>
+      </form>
     </div>
   </body>
 </html>

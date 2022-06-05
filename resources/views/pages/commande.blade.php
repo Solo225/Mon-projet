@@ -77,18 +77,18 @@
                 <option value="300">ADJAME</option>
                 <option value="400">ANYAMA</option>
                 <option value="100">ATTECOUBE</option>
-                <option value="50">BINGERVILLE</option>
-                <option value="COCODY">COCODY</option>
-                <option value="KOUMASSI">KOUMASSI</option>
-                <option value="MACORY">MARCORY</option>
-                <option value="PLATEAU">PLATEAU</option>
-                <option value="PORTBOUET">PORTBOUET</option>
-                <option value="TREICHVILLE">TREICHVILLE</option>
-                <option value="SONGON">SONGON</option>
-                <option value="YOPOUGON">YOPOUGON</option>
-                <option value="GONZAGUE-VILLE">GONZAGUE-VILLE</option>
-                <option value="ANANI">ANANI</option>
-                <option value="BASSAM">BASSAM</option>
+                <option value="200">BINGERVILLE</option>
+                <option value="200">COCODY</option>
+                <option value="200">KOUMASSI</option>
+                <option value="200">MARCORY</option>
+                <option value="200">PLATEAU</option>
+                <option value="200">PORTBOUET</option>
+                <option value="200">TREICHVILLE</option>
+                <option value="200">SONGON</option>
+                <option value="200">YOPOUGON</option>
+                <option value="200">GONZAGUE-VILLE</option>
+                <option value="200">ANANI</option>
+                <option value="200">BASSAM</option>
                 </select>
               </label>
               <label class="block mt-4 text-sm">
@@ -107,19 +107,19 @@
                   <option value="40">ABOBO</option>
                   <option value="440">ADJAME</option>
                   <option value="200">ANYAMA</option>
-                  <option value="ATTECOUBE">ATTECOUBE</option>
-                  <option value="BINGERVILLE">BINGERVILLE</option>
-                  <option value="COCODY">COCODY</option>
-                  <option value="KOUMASSI">KOUMASSI</option>
-                  <option value="MACORY">MARCORY</option>
-                  <option value="PLATEAU">PLATEAU</option>
-                  <option value="PORTBOUET">PORTBOUET</option>
-                  <option value="TREICHVILLE">TREICHVILLE</option>
-                  <option value="SONGON">SONGON</option>
-                  <option value="YOPOUGON">YOPOUGON</option>
-                  <option value="GONZAGUE-VILLE">GONZAGUE-VILLE</option>
-                  <option value="ANANI">ANANI</option>
-                  <option value="BASSAM">BASSAM</option>
+                  <option value="200">ATTECOUBE</option>
+                  <option value="398">BINGERVILLE</option>
+                  <option value="655">COCODY</option>
+                  <option value="988">KOUMASSI</option>
+                  <option value="200">MARCORY</option>
+                  <option value="200">PLATEAU</option>
+                  <option value="200">PORTBOUET</option>
+                  <option value="200">TREICHVILLE</option>
+                  <option value="200">SONGON</option>
+                  <option value="200">YOPOUGON</option>
+                  <option value="200">GONZAGUE-VILLE</option>
+                  <option value="200">ANANI</option>
+                  <option value="200">BASSAM</option>
                 </select>
               </label>
               <label class="block mt-4 text-sm">

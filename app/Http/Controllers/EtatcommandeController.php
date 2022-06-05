@@ -18,10 +18,14 @@ class EtatcommandeController extends Controller
     {
         // recuperons les prix unitaires et faisons la somme
         $prixTotal = $request->point_retrait + $request->point_depot;
+
+        // recuperons les autres informations afin de les injecter dans la vue de validation des commandes
         $point_retrait = $request->point_retrait;
         $point_depot = $request->point_depot;
+        $contactdestinataire = $request->contactdestinataire;
+        $contact_recup = $request->contact_recup;
 
-        return view('pages.commandevali', compact('prixTotal', 'point_depot', 'point_retrait'));
+        return view('pages.commandevali', compact('prixTotal', 'point_depot', 'point_retrait', 'contact_recup', 'contactdestinataire'));
     }
 
     // CETTE FONCTION VALIDE ET ENVOIE LES COMMANDE DE LA BD
@@ -30,18 +34,18 @@ class EtatcommandeController extends Controller
         // VERIFIONS SI LE GARS EST CONNECTE
          if (Auth::user()) {
             // VALIDER LES DONNEES DE LA BASE DONNEE
-            $this->validate($request, [
-                'point_retrait' => 'required',
-                'contact_recup' => 'required|digits:10',
-                'point_depot' => 'required',
+            // $this->validate($request, [
+            //     'point_retrait' => 'required',
+            //     'contact_recup' => 'required|digits:10',
+            //     'point_depot' => 'required',
 
-                'contactdestinataire' => 'required|digits:10',
-            ]);
+            //     'contactdestinataire' => 'required|digits:10',
+            // ]);
 
 
             // ENVOIE DES DONNEES DE LA BASE DE DONNEES
             Commande::create([
-                'contact_recup' => $request->contact_recup,
+                'contact_recup' => "salut", // change cette partie;
                 'point_retrait' => $request->point_retrait,
                 'point_depot' => $request->point_depot,
                 'contactdestinataire' => $request->contactdestinataire,
