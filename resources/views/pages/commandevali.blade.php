@@ -332,6 +332,8 @@
             <input type="hidden" name="point_retrait" value="{{ $point_retrait }}">
             <input type="hidden" name="point_depot" value="{{ $point_depot }}">
             <input type="hidden" name="contactdestinataire" value="{{ $contactdestinataire }}">
+            <input type="hidden" name="contact_recup" value="{{ $contact_recup }}">
+
             <div class="flex-1 h-full max-w-xl mx-auto   ">
 
                 <button

@@ -45,7 +45,7 @@ class EtatcommandeController extends Controller
 
             // ENVOIE DES DONNEES DE LA BASE DE DONNEES
             Commande::create([
-                'contact_recup' => "salut", // change cette partie;
+                'contact_recup' => $request->contact_recup,
                 'point_retrait' => $request->point_retrait,
                 'point_depot' => $request->point_depot,
                 'contactdestinataire' => $request->contactdestinataire,
