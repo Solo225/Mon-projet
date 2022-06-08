@@ -279,14 +279,14 @@
                       </td>
                       <td class="px-2 py-3 text-sm">
                       <a class="" href="#">
-                        {{ $commande->nombre_colis }} Fcfa
+                        {{ $commande->prixItineraire }} Fcfa
                         </a>
                       </td>
                       <td class="px-2 py-3 text-xs">
                       <a class="" href="/recap">
-                        @if ($commande->statut == "annulee")
+                        @if ($commande->statut == "refusée")
                       <span
-                        class="px-2 py-1  leading-tight text-red-700 bg-red-100 rounded-full dark:bg-green-700 dark:text-green-100"
+                        class="px-2 py-1  leading-tight text-red-700 bg-red-100 rounded-full dark:bg-green-700 dark:text-red-100"
                       >
                       {{ $commande->statut }}
                       </span>

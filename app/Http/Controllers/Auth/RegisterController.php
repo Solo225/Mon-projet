@@ -38,14 +38,10 @@ class RegisterController extends Controller
         // VALIDER LES DONNEES DE LA BASE DONNEE
         $valide =  $this->validate($request, [
             'nom' => 'required|max:20|string',
-            'prenom' => 'required|max:50|string',
-            'email' => 'required|email|unique:users',
             'contact' => 'required|digits:10|unique:users',
             'password' => 'required|min:8|confirmed',
         ], [
             'required.nom' => 'désolé, votre nom ne doit pas depasser 20 caractères',
-            'required.prenom' => 'désolé, votre prénom ne doit pas depasser 50 caractères',
-            'required.email' => 'désolé, cette adresse mail existe déjà dans notre base de données',
             'required.contact' => 'désolé, votre nom ne doit pas depasser 20 caractère',
             'required.confirmed' => 'désolé, vos mots de passe ne correspondent pas!',
         ]);
@@ -53,8 +49,6 @@ class RegisterController extends Controller
         // ENVOIE DES DONNEES DE LA BASE DE DONNEES
         User::create([
             'nom' => $request->nom,
-            'prenom' => $request->prenom,
-            'email' => $request->email,
             'type' => $request->type,
             'contact' => $request->contact,
             'password' => Hash::make($request->password),
@@ -64,9 +58,9 @@ class RegisterController extends Controller
         // CREATION DE LA SESSION UTILISATEUR
         if (Auth::attempt(['contact' => $request->contact, 'password' => $request->password])) {
 
-            // ENVOYER LE MAIL DE CONFIMATION ICI
-            Mail::to(auth()->user()->email)
-                ->send(new ConfirmationCompte($request->except('_token')));
+            // // ENVOYER LE MAIL DE CONFIMATION ICI
+            // Mail::to(auth()->user()->email)
+            //     ->send(new ConfirmationCompte($request->except('_token')));
 
             // REDIRECTION
             return redirect('/');

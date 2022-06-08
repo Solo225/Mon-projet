@@ -43,7 +43,7 @@ class LoginController extends Controller
 
         }else{
             // SINON
-            return redirect()->back()->with('message', 'Yo Mec, t\'es sur que tu as un compte?');
+            return view('pages.error');
         }
     }
 

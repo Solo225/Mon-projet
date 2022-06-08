@@ -46,7 +46,7 @@
                     Créer un compte
                   </h1>
                   <label class="block mt-4 text-sm">
-                    <span class="text-gray-700 dark:text-gray-400">Nom</span>
+                    <span class="text-gray-700 dark:text-gray-400">Nom & Prénom</span>
                     <input name="nom"
                       class="block w-full mt-1 text-smdark:border-gray-600 dark:bg-gray-700 focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:text-gray-300 dark:focus:shadow-outline-gray form-input from-control"
                       placeholder="Entrez votre nom" value="{{old('nom')  }}" required 
@@ -55,25 +55,8 @@
                   
                       @enderror</span>
                   </label>
-                  <label class="block mt-4 text-sm">
-                    <span class="text-gray-700 dark:text-gray-400">Prenom(s)</span>
-                    <input name="prenom"
-                      class="block w-full mt-1 text-smdark:border-gray-600 dark:bg-gray-700 focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:text-gray-300 dark:focus:shadow-outline-gray form-input from-control"
-                      placeholder="Entrez votre prenom(s)" value="{{old('prenom')  }}" required
-                    />
-                    <span class="text-red-700">@error('prenom'){{ 'Non valide' }}
-                      @enderror</span>
-                  </label>
-                   <label class="block mt-4 text-sm">
-                    <span class="text-gray-700 dark:text-gray-400">E-mail</span>
-                    <input name="email"
-                      class="block w-full mt-1 text-smdark:border-gray-600 dark:bg-gray-700 focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:text-gray-300 dark:focus:shadow-outline-gray form-input from-control"
-                      placeholder="ronphobos@phobos.ci" value="{{old('email')  }}" required
-                    />
-                    <span class="text-red-700">@error('email'){{ 'Non valide' }}
                   
-                      @enderror</span>
-                  </label>
+                   
                     <input type="hidden" name="type" value="client">
                   <label class="block mt-4 text-sm">
                     <span class="text-gray-700 dark:text-gray-400">Contact</span>

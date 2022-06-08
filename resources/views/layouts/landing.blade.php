@@ -41,20 +41,20 @@
       <div class="navbar-collapse collapse"  id="navbarContent">
         <ul class="navbar-nav ml-lg-4 pt-3 pt-lg-0">
           <li class="nav-item active">
-            <a href="/" class="nav-link">Acceuil</a>
+            <a href="/" class="relative top-0.5 nav-link">Acceuil</a>
           </li>
          @auth
            @if (auth()->user()->type == "livreur")
-            <li class="nav-item">
+            <li class="relative top-0.5 nav-item">
                 <a href="/livreur" class="nav-link">Mes commandes</a>
             </li>
           @else
-            <li class="nav-item">
+            <li class="relative top-0.5 nav-item">
                 <a href="/pageclient" class="nav-link">Mes commandes</a>
             </li>
           @endif
          @endauth
-          <li class="nav-item relative bottom-2">
+          <li class="nav-item relative top-0.5 bottom-2">
             <a href="/about" class="nav-link">Qui sommes-nous?</a>
           </li>
           <!-- <li class="nav-item">
@@ -71,8 +71,8 @@
         <a href="/profile" class="nav-link">Mon compte</a>
         @endif
       @endauth
-      <div class="relative bottom-2">
-        <a href="/logout" class="nav-link">Se déconnecter</a>
+      <div class=" bottom-2">
+        <a href="/logout" class=" relative bottom-0.4 nav-link">Se déconnecter</a>
       </div>
   </div>
         
@@ -103,8 +103,8 @@
             <h3>Shipp<span class="text-primary">-group</span></h3>
             <p>Pour vos livraisons.</p>
 
-            <p><a href="#" >bakayokog@mail.com</a></p>
-            <p><a href="#">+225 0777054186</a></p>
+            <p><a href="#" >laetitiabomanindezai@gmail.com</a></p>
+            <p><a href="#">+225 07-07-06-38-08</a></p>
           </div>
           <!-- <div class="col-lg-3 py-3">
             <h5>Quick Links</h5>

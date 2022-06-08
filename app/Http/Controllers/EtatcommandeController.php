@@ -17,15 +17,17 @@ class EtatcommandeController extends Controller
     public function commandeStore(Request $request)
     {
         // recuperons les prix unitaires et faisons la somme
-        $prixTotal = $request->point_retrait + $request->point_depot;
+        $prixTotal = $request->prixItineraire;
 
         // recuperons les autres informations afin de les injecter dans la vue de validation des commandes
         $point_retrait = $request->point_retrait;
         $point_depot = $request->point_depot;
         $contactdestinataire = $request->contactdestinataire;
         $contact_recup = $request->contact_recup;
+        $description = $request->description;
+        $prixItineraire = $request->prixItineraire;
 
-        return view('pages.commandevali', compact('prixTotal', 'point_depot', 'point_retrait', 'contact_recup', 'contactdestinataire'));
+        return view('pages.commandevali', compact('prixTotal', 'description', 'prixItineraire', 'point_depot', 'point_retrait', 'contact_recup', 'contactdestinataire'));
     }
 
     // CETTE FONCTION VALIDE ET ENVOIE LES COMMANDE DE LA BD
@@ -48,6 +50,8 @@ class EtatcommandeController extends Controller
                 'contact_recup' => $request->contact_recup,
                 'point_retrait' => $request->point_retrait,
                 'point_depot' => $request->point_depot,
+                'description' => $request->description,
+                'prixItineraire' => $request->prixItineraire,
                 'contactdestinataire' => $request->contactdestinataire,
                 'user_id' => Auth::user()->id,
              ]);

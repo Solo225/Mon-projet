@@ -49,17 +49,13 @@
             <!-- New Table -->
             <div class="w-full overflow-hidden rounded-lg shadow-xs">
               <div class="w-full overflow-x-auto">
+                
                 <table class="w-full whitespace-no-wrap">
                   <thead>
                     <tr
                       class="text-xs  tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
                     >
-                      <th class="px-4 py-3">Type colis</th>
-                      <th class="px-4 py-3">Poids</th>
-                      <th class="px-4 py-3">Nombre</th>
-                      <th class="px-4 py-3">Moyen de transport</th>
-                      <th class="px-4 py-3">Point de retrait</th>
-                      <th class="px-4 py-3">Date  et heure récupération</th>
+                      <th class="px-4 py-3">Prix</th>
                     </tr>
                   </thead>
                   <tbody
@@ -70,35 +66,81 @@
                       <td class="px-4 py-3">
                         <div class="flex items-center text-sm">
                           <div>
-                            <p class="">{{ $commande->type_prod }}</p>
+                            <p class="">{{ $commande->prixItineraire }}</p>
                           </div>
                         </div>
                       </td>
+                    </tr>
+
+                  </tbody>
+                </table>
+                <table class="w-full whitespace-no-wrap">
+                  <thead>
+                    <tr
+                      class="text-xs  tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
+                    >
+                      <th class="px-4 py-3">Description</th>
+                    </tr>
+                  </thead>
+                  <tbody
+                    class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
+                  >
+
+                    <tr class="text-gray-700 dark:text-gray-400">
                       <td class="px-4 py-3">
                         <div class="flex items-center text-sm">
                           <div>
-                            <p class="">{{ $commande->poids }}</p>
-
+                            <p class="">{{ $commande->description }}</p>
                           </div>
                         </div>
                       </td>
+                    </tr>
+
+                  </tbody>
+                </table>
+                <table class="w-full whitespace-no-wrap">
+                  <thead>
+                    <tr
+                      class="text-xs  tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
+                    >
+                      <th class="px-4 py-3">Point de dêpot</th>
+                    </tr>
+                  </thead>
+                  <tbody
+                    class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
+                  >
+
+                    <tr class="text-gray-700 dark:text-gray-400">
                       <td class="px-4 py-3">
                         <div class="flex items-center text-sm">
                           <div>
-                            <p class="">{{ $commande->nombre_colis }}</p>
+                            <p class="">{{ $commande->point_depot }}</p>
                           </div>
                         </div>
                       </td>
-                      <td class="px-4 py-3 text-sm">
-                        {{ $commande->transport }}
-                      </td>
-                      <td class="px-4 py-3 text-sm">
+                    </tr>
 
-                          {{ $commande->point_retrait }}
-                      </td>
+                  </tbody>
+                </table>
+                <table class="w-full whitespace-no-wrap">
+                  <thead>
+                    <tr
+                      class="text-xs  tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
+                    >
+                      <th class="px-4 py-3">Point de retrait</th>
+                    </tr>
+                  </thead>
+                  <tbody
+                    class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
+                  >
 
-                      <td class="px-4 py-3 text-sm">
-                        {{ $commande->date }}
+                    <tr class="text-gray-700 dark:text-gray-400">
+                      <td class="px-4 py-3">
+                        <div class="flex items-center text-sm">
+                          <div>
+                            <p class="">{{ $commande->point_retrait }}</p>
+                          </div>
+                        </div>
                       </td>
                     </tr>
 
@@ -108,71 +150,7 @@
 
 
           </div>
-          <div class="w-full overflow-hidden rounded-lg mt-8 shadow-xs">
-            <div class="w-full overflow-x-auto">
-              <table class="w-full whitespace-no-wrap">
-                <thead>
-                  <tr
-                    class="text-xs  tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
-                  >
-                    <th class="px-4 py-3">Nom du détenteur</th>
-                    <th class="px-4 py-3">Contact du détenteur </th>
-                    <th class="px-4 py-3">Point de dépot</th>
-                    <th class="px-4 py-3">Contact du récupérateur</th>
-                    <th class="px-4 py-3">Prix</th>
-                    <th class="px-4 py-3">Date et heure de depot</th>
-                    <th class="px-4 py-3">Contact du livreur</th>
-
-                  </tr>
-                </thead>
-                <tbody
-                  class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
-                >
-
-                  <tr class="text-gray-700 dark:text-gray-400">
-                    <td class="px-4 py-3">
-                      <div class="flex items-center text-sm">
-                        <div>
-                          <p class="">{{ $commande->recupere }}</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="px-4 py-3">
-                      <div class="flex items-center text-sm">
-                        <div>
-                          <p class="">{{ $commande->contact_recup }}</p>
-
-                        </div>
-                      </div>
-                    </td>
-                    <td class="px-4 py-3">
-                      <div class="flex items-center text-sm">
-                        <div>
-                          <p class="">{{ $commande->point_depot }}</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="px-4 py-3 text-sm">
-                      {{ $commande->destinataire }}
-                    </td>
-
-                    <td class="px-4 py-3 text-xs">
-                      2500Fcfa
-                    </td>
-                    <td class="px-4 py-3 text-sm">
-                      {{ $commande->date_depot }}
-                    </td>
-                    <td class="px-4 py-3 text-sm">
-                      {{ $commande->date_depot }}
-                    </td>
-                  </tr>
-
-                </tbody>
-              </table>
-            </div>
-
-
-        </div>
+          
 
           <div class="flex-1 h-full max-w-xl mx-auto   ">
 

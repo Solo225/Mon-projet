@@ -232,7 +232,7 @@
                   </svg>
                 </div>
                 <div>
-                  <a href="#">
+                  <a href="/utilisateur">
                   <p
                     class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400"
                   >
@@ -293,19 +293,32 @@
                     <tr
                       class="text-xs  tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
                     >
+                      <th class="px-4 py-3">Compte</th>
                       <th class="px-4 py-3">Itineraie</th>
                       <th class="px-4 py-3">Prix</th>
-                      <th class="px-4 py-3">Statuts</th>
-                      <th class="px-4 py-3">Dates</th>
+                      <th class="px-4 py-3">Statut</th>
+                      <th class="px-4 py-3">Date</th>
                     </tr>
                   </thead>
                   <tbody
                     class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
                   >
                   @auth
-                    @if ($commandes_attente->count())
-                    @foreach ($commandes_attente as $commande)
-                        <tr class="text-gray-700 dark:text-gray-400">
+                    @if ($commandes->count())
+                    @foreach ($commandes as $commande)
+                      <tr class="text-gray-700 dark:text-gray-400">
+                        <td class="px-4 py-3">
+                          <div class="flex items-center text-sm">
+                            <!-- Avatar with inset shadow -->
+                            
+                            <div>
+                              <p class="font-semibold"> {{ auth()->user()->nom }} </p>
+                              <p class="text-xs text-gray-600 dark:text-gray-400">
+                                {{ auth()->user()->type }}
+                              </p>
+                            </div>
+                          </div>
+                        </td>
                       <td class="px-4 py-3">
                         <a class="font-semibold" href="{{ route('recap.commande', $commande->id) }}"> {{ $commande->point_depot }}
                         <div class="flex items-center text-sm">
@@ -319,66 +332,51 @@
                         </div>
                         </a>
                       </td>
-                      <td class="px-4 py-3 text-sm">
-                      <a class="" href="#">
-                        {{ $commande->nombre_colis }} Fcfa
-                        </a>
-                      </td>
-                      <td class="px-4 py-3 text-xs">
-                        @if($commande->statut == "acceptée")
-                          <a class="" href="#">
-                          <span class="px-2 py-1  leading-tight text-green-700 bg-green-100 rounded-full dark:bg-yellow-700 dark:text-green-100">
-                            En cours
-                          </span>
-                        </a>
+                      <td class="px-2 py-3 text-sm">
+                        <a class="" href="#">
+                          {{ $commande->prixItineraire }} Fcfa
+                          </a>
+                        </td>
+                        <td class="px-2 py-3 text-xs">
+                        <a class="" href="/recap">
+                          @if ($commande->statut == "refusée")
+                        <span
+                          class="px-2 py-1  leading-tight text-red-700 bg-red-100 rounded-full dark:bg-green-700 dark:text-red-100"
+                        >
+                        {{ $commande->statut }}
+                        </span>
                         @elseif ($commande->statut == "encours")
-                        <a class="" href="#">
-                          <span class="px-2 py-1  leading-tight text-yellow-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
-                            Livrée
-                          </span>
-                        </a>
-                        @elseif ($commande->statut == "annulee")
-                        <a class="" href="#">
-                          <span class="px-2 py-1  leading-tight text-red-700 bg-red-100 rounded-full dark:bg-red-700 dark:text-green-100">
-                            Annulée
-                          </span>
-                        </a>
+                        <span
+                          class="px-2 py-1  leading-tight text-orange-700 bg-orange-100 rounded-full dark:bg-green-700 dark:text-green-100"
+                        >
+                        {{ $commande->statut }}
+                        </span>
+                        @else
+                        <span
+                          class="px-2 py-1  leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
+                        >
+                        {{ $commande->statut }}
+                        </span>
                         @endif
-
-                      </td>
                       <td class="px-4 py-3 text-sm">
                       <a class="" href="/recap">
                         {{ $commande->created_at }}
                         </a>
                       </td>
-                      <td class=" text-xs">
-                          <form action="{{ route('commande-acceptee', $commande->id) }}" method="POST">
-                            @csrf
-                            @method('PUT')
-                            <input type="hidden" name="statut" value="encours">
-                            <a class="">
-                            <button
-                                class="block w-80 px-4 py-4   font-medium leading-5 text-center text-green-700 text-md  transition-colors duration-150 bg-green-100 border border-transparent rounded-lg active:bg-green-700 focus:outline-none  focus:shadow-outline-green"
-                                >
-                                Accepter
-                            </button>
-                            </a>
-                        </form>
-                      </td>
-                      <td class=" text-xs">
-                        <form action="{{ route('commande-refusee', $commande->id) }}" method="POST">
-                            @csrf
-                            @method('PUT')
-                            <input type="hidden" name="statut" value="annulee">
-                            <a class="" >
-                            <button
-                                class="block w-80 px-4 py-4   font-medium leading-5 text-center text-white text-md  transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 focus:outline-none  focus:shadow-outline-red"
-                                >
-                                Refuser
-                            </button>
-                          </a>
-                        </form>
-                      </td>
+                      {{-- <td class="px-4 py-3">
+                        <div class="flex items-center text-sm">
+                          <!-- Avatar with inset shadow -->
+                          
+                          <div>
+                            <p class="font-semibold">@auth {{ }} @endauth</p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400">
+                              @auth {{ }} @endauth
+                            </p>
+                          </div>
+                        </div>
+                      </td> --}}
+                      
+                     
                     </tr>
                     @endforeach
                   @else

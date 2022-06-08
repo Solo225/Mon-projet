@@ -68,27 +68,57 @@
             <div
               class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800"
             >
+            <label class="block mt-4 text-sm">
+              <span class="text-gray-700 dark:text-gray-400 font-bold">Itinéraire</span>
+              <select name="prixItineraire"
+                class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:focus:shadow-outline-gray"
+              >
+              <option value="1500">Abobo-Adjamé</option>
+              <option value="2000">Abobo-Anyama</option>
+              <option value="3000">Abobo-Attecoube</option>
+              <option value="4000">Abobo-Bingerville</option>
+              <option value="500">Abobo-Cocody</option>
+              <option value="900">Abobo-Koumassi</option>
+              <option value="500">Abobo-Marcory</option>
+              <option value="3002">Abobo-Plateau</option>
+              <option value="4500">Abobo-Portbouët</option>
+              <option value="7400">Abobo-Treiville</option>
+              <option value="58222">Abobo-Songon</option>
+              <option value="8555">Abobo-Yopougon</option>
+              <option value="8555">Abobo-Gonzague</option>
+              <option value="9562">Abobo-Anani</option>
+              <option value="8514">Abobo-Bassam</option>
+              <option value="95236">Adjamé-Anyama</option>
+              <option value="95236">Adjamé-Attécoubé</option>
+              <option value="95236">Adjamé-Bingerville</option>
+              <option value="95236">Adjamé-Cocody</option>
+              <option value="95236">Adjamé-Koumassi</option>
+              <option value="95236">Adjamé-Marcory</option>
+              <option value="95236">Adjamé-Plateau</option>
+              <option value="95236">Adjamé-Portbouët</option>
+              </select>
+            </label>
               <label class="block mt-4 text-sm">
                 <span class="text-gray-700 dark:text-gray-400 font-bold">Point de collecte</span>
                 <select name="point_retrait"
                   class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:focus:shadow-outline-gray"
                 >
-                <option value="200">ABOBO</option>
-                <option value="300">ADJAME</option>
-                <option value="400">ANYAMA</option>
-                <option value="100">ATTECOUBE</option>
-                <option value="200">BINGERVILLE</option>
-                <option value="200">COCODY</option>
-                <option value="200">KOUMASSI</option>
-                <option value="200">MARCORY</option>
-                <option value="200">PLATEAU</option>
-                <option value="200">PORTBOUET</option>
-                <option value="200">TREICHVILLE</option>
-                <option value="200">SONGON</option>
-                <option value="200">YOPOUGON</option>
-                <option value="200">GONZAGUE-VILLE</option>
-                <option value="200">ANANI</option>
-                <option value="200">BASSAM</option>
+                <option value="ABOBO">ABOBO</option>
+                <option value="ADJAME">ADJAME</option>
+                <option value="ANAYAMA">ANYAMA</option>
+                <option value="ATTECOUBE">ATTECOUBE</option>
+                <option value="BINGERVILLE">BINGERVILLE</option>
+                <option value="COCODY">COCODY</option>
+                <option value="KOUMASSI">KOUMASSI</option>
+                <option value="MARCORY">MARCORY</option>
+                <option value="PLATEAU">PLATEAU</option>
+                <option value="PORTBOUET">PORTBOUET</option>
+                <option value="TREICHVILLE">TREICHVILLE</option>
+                <option value="SONGON">SONGON</option>
+                <option value="YOPOUGON">YOPOUGON</option>
+                <option value="GONZAGUE-VILLE">GONZAGUE-VILLE</option>
+                <option value="ANANI">ANANI</option>
+                <option value="BASSAM">BASSAM</option>
                 </select>
               </label>
               <label class="block mt-4 text-sm">
@@ -104,22 +134,22 @@
                 <select name="point_depot"
                   class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:focus:shadow-outline-gray"
                 >
-                  <option value="40">ABOBO</option>
-                  <option value="440">ADJAME</option>
-                  <option value="200">ANYAMA</option>
-                  <option value="200">ATTECOUBE</option>
-                  <option value="398">BINGERVILLE</option>
-                  <option value="655">COCODY</option>
-                  <option value="988">KOUMASSI</option>
-                  <option value="200">MARCORY</option>
-                  <option value="200">PLATEAU</option>
-                  <option value="200">PORTBOUET</option>
-                  <option value="200">TREICHVILLE</option>
-                  <option value="200">SONGON</option>
-                  <option value="200">YOPOUGON</option>
-                  <option value="200">GONZAGUE-VILLE</option>
-                  <option value="200">ANANI</option>
-                  <option value="200">BASSAM</option>
+                <option value="ABOBO">ABOBO</option>
+                <option value="ADJAME">ADJAME</option>
+                <option value="ANAYAMA">ANYAMA</option>
+                <option value="ATTECOUBE">ATTECOUBE</option>
+                <option value="BINGERVILLE">BINGERVILLE</option>
+                <option value="COCODY">COCODY</option>
+                <option value="KOUMASSI">KOUMASSI</option>
+                <option value="MARCORY">MARCORY</option>
+                <option value="PLATEAU">PLATEAU</option>
+                <option value="PORTBOUET">PORTBOUET</option>
+                <option value="TREICHVILLE">TREICHVILLE</option>
+                <option value="SONGON">SONGON</option>
+                <option value="YOPOUGON">YOPOUGON</option>
+                <option value="GONZAGUE-VILLE">GONZAGUE-VILLE</option>
+                <option value="ANANI">ANANI</option>
+                <option value="BASSAM">BASSAM</option>
                 </select>
               </label>
               <label class="block mt-4 text-sm">
@@ -129,12 +159,19 @@
                    required
                 />
               </label>
+              <label class="block mt-4 text-sm">
+                <span class="text-gray-700 dark:text-gray-400 font-bold">Description de la commande</span>
+                <input type="text" name="description"
+                  class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-red-400 focus:outline-none focus:shadow-outline-red dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                   required
+                />
+              </label>
               </div>
               <div class="flex-1 h-full max-w-xl mx-auto   ">
 
 
             <button
-                class="block w-80 px-4 py-4 mt-8  font-medium leading-5 text-center text-white text-md  transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 focus:outline-none  focus:shadow-outline-red"
+                class="block w-80 px-4 py-4 mb-56  font-medium leading-5 text-center text-white text-md  transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 focus:outline-none  focus:shadow-outline-red"
               >
                 Suivant
             </button>

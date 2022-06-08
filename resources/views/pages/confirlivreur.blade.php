@@ -268,7 +268,6 @@
                     >
                       <th class="px-4 py-3">Itinéraie</th>
                       <th class="px-4 py-3">Prix</th>
-                      <th class="px-4 py-3">Statuts</th>
                       <th class="px-4 py-3">Dates</th>
                     </tr>
                   </thead>
@@ -291,13 +290,13 @@
                         </div>
                         </a>
                       </td>
-                      <td class="px-4 py-3 text-sm">
+                      <td class="px-4 py-3 text-sm"> 
                       <a class="" href="#">
-                        {{ $commande->nombre_colis }} Fcfa
+                        {{ $commande->prixItineraire }} Fcfa
                         </a>
                       </td>
-                      <td class="px-4 py-3 text-xs">
-                        @if($commande->statut == "acceptée")
+                      {{-- <td class="px-4 py-3 text-xs">
+                        @if($commande->statut == "livrée")
                           <a class="" href="#">
                           <span class="px-2 py-1  leading-tight text-green-700 bg-green-100 rounded-full dark:bg-yellow-700 dark:text-green-100">
                             En cours
@@ -317,7 +316,7 @@
                         </a>
                         @endif
 
-                      </td>
+                      </td> --}}
                       <td class="px-4 py-3 text-sm">
                       <a class="" href="/recap">
                         {{ $commande->created_at }}
@@ -327,12 +326,12 @@
                           <form action="{{ route('commande-acceptee', $commande->id) }}" method="POST">
                             @csrf
                             @method('PUT')
-                            <input type="hidden" name="statut" value="acceptée">
+                            <input type="hidden" name="statut" value="livrée">
                             <a class="">
                             <button
                                 class="block w-80 px-4 py-4   font-medium leading-5 text-center text-green-700 text-md  transition-colors duration-150 bg-green-100 border border-transparent rounded-lg active:bg-green-700 focus:outline-none  focus:shadow-outline-green"
                                 >
-                                Accepter
+                                Livrée
                             </button>
                             </a>
                         </form>

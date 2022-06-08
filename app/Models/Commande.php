@@ -15,6 +15,8 @@ class Commande extends Model
         'contact_recup',
         'point_depot',
         'contactdestinataire',
+        'description',
+        'prixItineraire',
         'user_id',
     ];
 

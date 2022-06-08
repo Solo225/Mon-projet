@@ -194,7 +194,8 @@
                 <h2
                     class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200"
                 >
-                    Les informations de la commande
+                    Les informations de la commande <br>
+                    <span class="text-sm text-red-700 font-blod">Passez cette étape il vous sera impossible d'annuler</span>
                 </h2>
                 <!-- CTA -->
                 <a
@@ -220,26 +221,88 @@
                 <div class="w-full mb-8 overflow-hidden rounded-lg shadow-xs">
                     <div class="w-full overflow-x-auto">
                     <table class="w-full whitespace-no-wrap">
-
-                        <tbody
+                      <tbody
                         class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
                         >
-
-
-
-
-
-
                         <tr class="text-gray-700 dark:text-gray-400">
                             <td class="px-4 py-3">
                             <div class="flex items-center text-sm">
                                 <!-- Avatar with inset shadow -->
 
                                 <div>
-                                <p class="font-semibold">@auth {{ auth()->user()->nom }} @endauth</p>
-                                <p class="text-xs text-gray-600 dark:text-gray-400">
-                                    @auth {{ auth()->user()->type }} @endauth
-                                </p>
+                                <p class="px-2 py-1 font-semibold leading-tight text-gray-700 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-100">@auth {{ auth()->user()->nom }} @endauth</p>
+                                
+                                </div>
+                            </div>
+                            </td>
+
+                        </tr>
+                        </tbody>
+
+                        <tbody
+                        class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
+                        >
+                        <tr class="text-gray-700 dark:text-gray-400">
+                            <td class="px-4 py-3">
+                            <div class="flex items-center text-sm">
+                                <!-- Avatar with inset shadow -->
+
+                                <div>
+                                <p class="font-semibold">{{$description }}</p>
+                                
+                              
+                                </div>
+                            </div>
+                            </td>
+
+                        </tr>
+                        </tbody>
+                        
+                        <tbody
+                        class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
+                        >
+                        <tr class="text-gray-700 dark:text-gray-400">
+                            <td class="px-4 py-3">
+                            <div class="flex items-center text-sm">
+                                <!-- Avatar with inset shadow -->
+
+                                <div>
+                                <p class="text-red-500  font-semibold"> {{$prixTotal }} Fcfa</p>
+                                
+                                </div>
+                            </div>
+                            </td>
+
+                        </tr>
+                        </tbody>
+                        <tbody
+                        class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
+                        >
+                        <tr class="text-gray-700 dark:text-gray-400">
+                            <td class="px-4 py-3">
+                            <div class="flex items-center text-sm">
+                                <!-- Avatar with inset shadow -->
+
+                                <div>
+                                <p class="font-semibold">Point de dêpot: {{$point_depot }}</p>
+                                
+                                </div>
+                            </div>
+                            </td>
+
+                        </tr>
+                        </tbody>
+                        <tbody
+                        class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
+                        >
+                        <tr class="text-gray-700 dark:text-gray-400">
+                            <td class="px-4 py-3">
+                            <div class="flex items-center text-sm">
+                                <!-- Avatar with inset shadow -->
+
+                                <div>
+                                <p class="font-semibold">Point de retrait: {{$point_retrait }}</p>
+                                
                                 </div>
                             </div>
                             </td>
@@ -247,101 +310,28 @@
                         </tr>
                         </tbody>
                     </table>
-                    <table class="w-full whitespace-no-wrap">
-
-                        <tbody
-                        class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
-                        >
-                        <tr class="text-gray-700 dark:text-gray-400">
-                            <td class="px-4 py-3 text-sm">
-                                @auth {{ auth()->user()->prenom }} @endauth
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                    <table class="w-full whitespace-no-wrap">
-
-                        <tbody
-                        class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
-                        >
-
-
-
-
-
-
-                        <tr class="text-gray-700 dark:text-gray-400">
-
-
-                            <td class="px-4 py-3 text-xs">
-                            <span
-                                class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
-                            >
-                            @auth {{ auth()->user()->contact }} @endauth
-                            </span>
-                            </td>
-
-                        </tr>
-                        </tbody>
-                    </table>
-                    <table class="w-full whitespace-no-wrap">
-
-                        <tbody
-                        class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
-                        >
-
-
-
-
-
-
-                        <tr class="text-gray-700 dark:text-gray-400">
-
-
-                            <td class="px-4 py-3 text-sm">
-                                @auth {{ auth()->user()->email }} @endauth
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                    <table class="w-full whitespace-no-wrap">
-
-                        <tbody
-                        class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
-                        >
-
-
-
-
-
-
-                        <tr class="text-gray-700 dark:text-gray-400">
-
-
-                            <td class="px-4 py-3 text-sm">
-                                Vous devez payer la sommes de <span style="color: green">{{ $prixTotal }} FCFA</span>. <br> Le point de dépôt coûte {{ $point_depot }} Fcfa et le point de retrait coûte {{ $point_retrait }} FCFA
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
+                    
                     </div>
 
 
                 </div>
+                <div class="flex-1 h-full max-w-xl mx-auto   ">
+
+                  <button
+                      class="block w-80 px-4 py-4 mb-56  font-medium leading-5 text-center text-white text-md  transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 focus:outline-none  focus:shadow-outline-red"
+                  >
+                      Commander
+                  </button>
+              </div>
             </main>
             <input type="hidden" name="point_retrait" value="{{ $point_retrait }}">
             <input type="hidden" name="point_depot" value="{{ $point_depot }}">
             <input type="hidden" name="contactdestinataire" value="{{ $contactdestinataire }}">
             <input type="hidden" name="contact_recup" value="{{ $contact_recup }}">
+            <input type="hidden" name="description" value="{{ $description }}">
+            <input type="hidden" name="prixItineraire" value="{{ $prixItineraire }}">
 
-            <div class="flex-1 h-full max-w-xl mx-auto   ">
-
-                <button
-                    class="block w-80 px-4 py-4 mb-56  font-medium leading-5 text-center text-white text-md  transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 focus:outline-none  focus:shadow-outline-red"
-                >
-                    Commander
-                </button>
-                </div>
+            
         </div>
       </form>
     </div>

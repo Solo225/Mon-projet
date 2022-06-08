@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Commande;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class HomeController extends Controller
 {
@@ -25,10 +26,11 @@ class HomeController extends Controller
         return view('pages.pageclient', compact('commandes'));
     }
     // RENVOIE LA PAGES DES UTILISATEURS
+    
     public function utilisa()
     {
-        $commandes = Commande::get();
-        return view('pages.utilisateur', compact('commandes'));
+        $users = User:: all();
+        return view('pages.utilisateur', compact('users'));
     }
     // RENVOIE DES COMMANDES DE LIVRAISON
     public function livraison()

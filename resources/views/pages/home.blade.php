@@ -315,11 +315,11 @@ o	>10 Kg</strong>
             </li>
             <li>
               <div class="icon"><span class="mai-mail"></span></div>
-              <div class="content"><a href="#">bakayoko@gmail.com</a></div>
+              <div class="content"><a href="#">laetitiabomanindezai@gmail.com</a></div>
             </li>
             <li>
               <div class="icon"><span class="mai-phone-portrait"></span></div>
-              <div class="content"><a href="#">+225 0777054186</a></div>
+              <div class="content"><a href="#">+225 0707063808</a></div>
             </li>
           </ul>
         </div>
